@@ -1,7 +1,8 @@
 package model;
 import lombok.Data;
+import lombok.AllArgsConstructor;
 
-public @Data class Juego {
+public @Data @AllArgsConstructor class Juego {
 	
 	private String nombre;
 	private String plataforma;
