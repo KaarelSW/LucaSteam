@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LeerDatos {
 	
-	public int LeerInt() {
+	public static int LeerInt() {
 		Scanner input = new Scanner(System.in);
 		return input.nextInt();
 	}

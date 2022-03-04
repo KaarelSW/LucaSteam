@@ -1,12 +1,16 @@
 package control;
 
 import gui.Menu;
+import services.ILucaSteamService;
+import services.LucaSteamService;
 import utils.LeerDatos;
 
-public class Videojuegos {
-	
-	LeerDatos entrada = new LeerDatos();
 
+public class LucaSteam {
+	
+	private ILucaSteamService servicios = new LucaSteamService();
+	
+	
 	public void abrirMenu() {
 		boolean seguir = true;
 		do {
@@ -22,10 +26,9 @@ public class Videojuegos {
 		boolean seguir = true;
 		
 		try {
-			switch(entrada.LeerInt()) {
+			switch(LeerDatos.LeerInt()) {
 			case 1: 
-				// Listar productos
-				// método a implementar
+				servicios.mostrarJuegos();
 				break;
 			case 0:
 				// Salir
