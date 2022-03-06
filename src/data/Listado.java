@@ -46,7 +46,7 @@ public @Data class Listado implements IListado {
 		}
 	}
 
-	public void cargarCSV(String url) {
+	public boolean cargarCSV(String url) {
 		
 		listaJuegos = new HashMap<>();
 		int id = 0;
@@ -61,9 +61,11 @@ public @Data class Listado implements IListado {
 				id++;
 				line = lector.readLine();
 			}
+			return true;
 		} catch (IOException error) {
 			error.printStackTrace();
-		}		
+		}
+		return false;
 	}
 
 	public Juego crearJuego(String[] atributos) {
