@@ -31,11 +31,11 @@ public @Data class Listado implements IListado {
 	}
 
 	//añadir que pida un String url
-	public void cargarCSV() {
+	public void cargarCSV(String url) {
 		
 		listaJuegos = new HashMap<>();
 		int id = 0;
-		try (BufferedReader lector = new BufferedReader(new FileReader("vgsalesTab.csv"))) {
+		try (BufferedReader lector = new BufferedReader(new FileReader(url))) {
 			String line = lector.readLine();
 			while (line != null) {
 				if(id != 0) {
