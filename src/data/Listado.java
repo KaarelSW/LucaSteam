@@ -30,7 +30,6 @@ public @Data class Listado implements IListado {
 		}
 	}
 
-	//añadir que pida un String url
 	public void cargarCSV(String url) {
 		
 		listaJuegos = new HashMap<>();

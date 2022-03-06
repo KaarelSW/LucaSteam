@@ -9,7 +9,7 @@ public class LucaSteamService implements ILucaSteamService {
 
 	@Override
 	public void listarJuegos() {
-		listado.cargarCSV("vgsalesTab.csv");
+		listado.cargarCSV("vgsalesTab.csv"); //A falta de base de datos, hardcodeamos el archivo CSV
         listado.mostrarJuegos();		
     }	
 
