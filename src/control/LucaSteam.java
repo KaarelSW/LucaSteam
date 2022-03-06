@@ -27,7 +27,7 @@ public class LucaSteam {
 		try {
 			switch(LeerDatos.LeerInt()) {
 			case 1: 
-				servicios.mostrarJuegos();
+				servicios.listarJuegos();
 				break;
 			case 0:
 				// Salir

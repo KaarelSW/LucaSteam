@@ -26,7 +26,7 @@ public @Data class Listado implements IListado {
 	public void mostrarJuegos(){
 			
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
-			System.out.println(": " + entrada.getKey() + " & Value: " + entrada.getValue());
+			System.out.println("Código: " + entrada.getKey() + " | Juego: " + entrada.getValue().getNombre() + " | Plataforma: " + entrada.getValue().getPlataforma() + " | Año: " + entrada.getValue().getFechaPublicacion() + " | Género: " + entrada.getValue().getGenero() + " | Distribuidora: " + entrada.getValue().getDistribuidora());
 		}
 	}
 
