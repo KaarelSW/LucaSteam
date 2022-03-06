@@ -24,5 +24,12 @@ public @Data @AllArgsConstructor class Juego {
 	private int fechaPublicacion;
 	private String genero;
 	private String distribuidora;
+	
+	@Override
+	public String toString() {
+		return "Juego: " + this.getNombre() + " | Plataforma: " + this.getPlataforma() + " | Año: " + this.getFechaPublicacion() + " | Género: " + this.getGenero() + " | Distribuidora: " + this.getDistribuidora();
+	}
+	
+	
 
 }

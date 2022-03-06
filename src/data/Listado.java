@@ -42,7 +42,7 @@ public @Data class Listado implements IListado {
 	public void mostrarJuegos(){
 			
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
-			System.out.println("C�digo: " + entrada.getKey() + " | Juego: " + entrada.getValue().getNombre() + " | Plataforma: " + entrada.getValue().getPlataforma() + " | A�o: " + entrada.getValue().getFechaPublicacion() + " | G�nero: " + entrada.getValue().getGenero() + " | Distribuidora: " + entrada.getValue().getDistribuidora());
+			System.out.println(entrada.toString());
 		}
 	}
 
