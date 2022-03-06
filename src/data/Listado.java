@@ -25,19 +25,14 @@ public @Data class Listado implements IListado {
 
 	public void mostrarJuegos(){
 			
-			for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
-			    System.out.println(": " + entrada.getKey() + " & Value: " + entrada.getValue());
-			}
+		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
+			System.out.println(": " + entrada.getKey() + " & Value: " + entrada.getValue());
+		}
 	}
 
-	/**
-	 * 
-	 * El método cargarCSV lee el archivo CSV y crea un Juego por cada línea del CSV
-	 * en el que sus atributos son los elementos separados por comas que nos
-	 * interesan
-	 */
 	//añadir que pida un String url
 	public void cargarCSV() {
+		
 		listaJuegos = new HashMap<>();
 		int id = 0;
 		try (BufferedReader lector = new BufferedReader(new FileReader("vgsalesTab.csv"))) {
@@ -53,10 +48,11 @@ public @Data class Listado implements IListado {
 			}
 		} catch (IOException error) {
 			error.printStackTrace();
-		}
+		}		
 	}
 
 	public Juego crearJuego(String[] atributos) {
+		
 		String nombre = atributos[1];
 		String plataforma = atributos[2];
 		int fechaPublicacion = 0;
@@ -69,6 +65,5 @@ public @Data class Listado implements IListado {
 		String distribuidora = atributos[5];
 		return new Juego(nombre, plataforma, fechaPublicacion, genero, distribuidora);
 	}
-}
 	
-
+}

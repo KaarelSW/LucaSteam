@@ -10,9 +10,7 @@ public class LucaSteamService implements ILucaSteamService {
 	@Override
 	public void mostrarJuegos() {
 		listado.cargarCSV();
-        listado.mostrarJuegos();
-		
-    }
-	
+        listado.mostrarJuegos();		
+    }	
 
 }

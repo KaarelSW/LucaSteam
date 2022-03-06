@@ -8,17 +8,16 @@ import utils.LeerDatos;
 
 public class LucaSteam {
 	
-	private ILucaSteamService servicios = new LucaSteamService();
-	
+	private ILucaSteamService servicios = new LucaSteamService();	
 	
 	public void abrirMenu() {
+		
 		boolean seguir = true;
 		do {
 			new Menu().mostrarMenu();
 			seguir = this.selectorDeOpciones();	
 		} while (seguir);
-		System.out.println("Adiós locoo");
-		
+		System.out.println("Adiós locoo");		
 	}
 	
 	public boolean selectorDeOpciones() {
@@ -36,11 +35,8 @@ public class LucaSteam {
 			}
 		} catch ( Exception e ) {
 			System.out.println("Error " + e.toString());
-		}
-		
-		return seguir;
-		
-	}
-	
+		}		
+		return seguir;		
+	}	
 	
 }
