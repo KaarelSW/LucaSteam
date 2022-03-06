@@ -1,3 +1,19 @@
+/**
+ * 
+ * @author Grupo02
+ * 
+ *Nombre: Listado
+ *
+ *Descripción: En esta clase se guarda la lista de Juegos, así como los métodos para leer el archivo CSV y
+ *crear los Juegos que iran a la listaJuegos a partir de los datos de dicho archivo y el método para 
+ *mostrar la listaJuegos en pantalla.
+ *
+ *Fecha: 06/03/22
+ *
+ *Versión: 2
+ *
+ */
+
 package data;
 
 import java.util.HashMap;
@@ -64,5 +80,5 @@ public @Data class Listado implements IListado {
 		String distribuidora = atributos[5];
 		return new Juego(nombre, plataforma, fechaPublicacion, genero, distribuidora);
 	}
-	
+
 }
