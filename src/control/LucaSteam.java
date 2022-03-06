@@ -32,7 +32,7 @@ public class LucaSteam {
 			new Menu().mostrarMenu();
 			seguir = this.selectorDeOpciones();	
 		} while (seguir);
-		System.out.println("Adi�s locoo");		
+		System.out.println("Hasta luego");		
 	}
 	
 	public boolean selectorDeOpciones() {
