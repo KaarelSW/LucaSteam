@@ -4,13 +4,13 @@
  * 
  *Nombre: Listado
  *
- *Descripción: En esta clase se guarda la lista de Juegos, así como los métodos para leer el archivo CSV y
- *crear los Juegos que iran a la listaJuegos a partir de los datos de dicho archivo y el método para 
+ *Descripciï¿½n: En esta clase se guarda la lista de Juegos, asï¿½ como los mï¿½todos para leer el archivo CSV y
+ *crear los Juegos que iran a la listaJuegos a partir de los datos de dicho archivo y el mï¿½todo para 
  *mostrar la listaJuegos en pantalla.
  *
  *Fecha: 06/03/22
  *
- *Versión: 2
+ *Versiï¿½n: 2
  *
  */
 
@@ -42,7 +42,7 @@ public @Data class Listado implements IListado {
 	public void mostrarJuegos(){
 			
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
-			System.out.println("Código: " + entrada.getKey() + " | Juego: " + entrada.getValue().getNombre() + " | Plataforma: " + entrada.getValue().getPlataforma() + " | Año: " + entrada.getValue().getFechaPublicacion() + " | Género: " + entrada.getValue().getGenero() + " | Distribuidora: " + entrada.getValue().getDistribuidora());
+			System.out.println("Cï¿½digo: " + entrada.getKey() + " | Juego: " + entrada.getValue().getNombre() + " | Plataforma: " + entrada.getValue().getPlataforma() + " | Aï¿½o: " + entrada.getValue().getFechaPublicacion() + " | Gï¿½nero: " + entrada.getValue().getGenero() + " | Distribuidora: " + entrada.getValue().getDistribuidora());
 		}
 	}
 
@@ -69,14 +69,28 @@ public @Data class Listado implements IListado {
 	public Juego crearJuego(String[] atributos) {
 		
 		String nombre = atributos[1];
-		String plataforma = atributos[2];
+		String plataforma = "";
+		if(atributos[2].equals("3DS")) {
+			plataforma = "N3DS";
+		} else if (atributos[2].equals("2600")) {
+			plataforma = "DOSMILSEISCIENTOS";
+		}else if (atributos[2].equals("3DO")) {
+			plataforma = "TRESDO";
+		} else {
+			plataforma = atributos[2].toUpperCase();
+		}	
 		int fechaPublicacion = 0;
 		if(atributos[3].equals("N/A")) {
 			fechaPublicacion = -1;
 		}else {
 			fechaPublicacion = Integer.parseInt(atributos[3]);
 		}			
-		String genero = atributos[4];
+		String genero = "";
+		if(atributos[4].equals("Role-Playing")) {
+			genero = "ROLEPLAYING";
+		}else {
+			genero = atributos[4].toUpperCase();
+		}
 		String distribuidora = atributos[5];
 		return new Juego(nombre, plataforma, fechaPublicacion, genero, distribuidora);
 	}
