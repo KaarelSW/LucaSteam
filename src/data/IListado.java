@@ -4,12 +4,12 @@
  * 
  *Nombre: IListado
  *
- *Descripción: Interfaz de la clase Listado, se declaran los métodos de la clase Listado para que sean
+ *Descripcion: Interfaz de la clase Listado, se declaran los metodos de la clase Listado para que sean
  *sobreescritos por esta.
  *
  *Fecha: 04/03/22
  *
- *Versión: 1
+ *Version: 1
  *
  */
 

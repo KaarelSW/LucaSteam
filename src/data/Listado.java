@@ -4,13 +4,13 @@
  * 
  *Nombre: Listado
  *
- *Descripci�n: En esta clase se guarda la lista de Juegos, as� como los m�todos para leer el archivo CSV y
- *crear los Juegos que iran a la listaJuegos a partir de los datos de dicho archivo y el m�todo para 
+ *Descripcion: En esta clase se guarda la lista de Juegos, asi como los metodos para leer el archivo CSV y
+ *crear los Juegos que iran a la listaJuegos a partir de los datos de dicho archivo y el metodo para 
  *mostrar la listaJuegos en pantalla.
  *
  *Fecha: 06/03/22
  *
- *Versi�n: 2
+ *Version: 2
  *
  */
 

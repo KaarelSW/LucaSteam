@@ -4,12 +4,12 @@
  * 
  *Nombre: Juego
  *
- *Descripción: Se trata de la clase en la que se almacenarán los datos de cada juego de los sacados del
+ *Descripcion: Se trata de la clase en la que se almacenaran los datos de cada juego de los sacados del
  *archivo CSV
  *
  *Fecha: 04/03/22
  *
- *Versión: 1
+ *Version: 1
  *
  */
 

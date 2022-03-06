@@ -1,3 +1,17 @@
+/**
+ * 
+ * @author Grupo02
+ * 
+ *Nombre: LucaSteam
+ *
+ *Descripcion: Esta clase llama a la capa de servicios una vez se ha elegido una de las opciones que se
+ *muestran en pantalla. De momento las opciones son mostrar la lista de juegos o salir.
+ *
+ *Fecha: 04/03/22
+ *
+ *Version: 1
+ *
+ */
 
 package control;
 
@@ -18,7 +32,7 @@ public class LucaSteam {
 			new Menu().mostrarMenu();
 			seguir = this.selectorDeOpciones();	
 		} while (seguir);
-		System.out.println("Adiós locoo");		
+		System.out.println("Adiï¿½s locoo");		
 	}
 	
 	public boolean selectorDeOpciones() {
