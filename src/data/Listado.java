@@ -100,7 +100,7 @@ public @Data class Listado implements IListado {
 		return new Juego(nombre, plataforma, fechaPublicacion, genero, distribuidora);
 	}
 	
-	public void mostrarFiltrarJuegosPlataforma(String empresa){
+	public void filtrarJuegosPlataforma(String empresa){
 		
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
 			if (entrada.getValue().getPlataforma().getEmpresa() == empresa) {

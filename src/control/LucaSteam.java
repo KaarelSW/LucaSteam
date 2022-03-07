@@ -46,6 +46,7 @@ public class LucaSteam {
 				break;
 			case 2:
 				servicios.filtrarPlataformaServicios("Nintendo");
+				break;
 			case 0:
 				// Salir
 				seguir = false;
