@@ -64,6 +64,7 @@ public class LucaSteam {
 				break;
 			case 4:
 				servicios.filtrarGeneroServicios("PLATFORM");
+				break;
 			case 0:
 				// Salir
 				seguir = false;
@@ -80,9 +81,9 @@ public class LucaSteam {
 		
 		atributos[1] = LeerDatos.LeerTexto("Introduzca el nombre del juego");
 		atributos[2] = LeerDatos.LeerTexto("Introduzca su plataforma");
-		atributos[3] = LeerDatos.LeerTexto("Introduzca el a�o de salida de " + atributos[1]);
-		atributos[4] = LeerDatos.LeerTexto("�A qu� g�nero pertenece?");
-		atributos[5] = LeerDatos.LeerTexto("Por �ltimo, indique la distribuidora");
+		atributos[3] = LeerDatos.LeerTexto("Introduzca el año de salida de " + atributos[1]);
+		atributos[4] = LeerDatos.LeerTexto("A que género pertenece?");
+		atributos[5] = LeerDatos.LeerTexto("Por último, indique la distribuidora");
 		
 		return atributos;
 	}
