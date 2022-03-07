@@ -18,6 +18,6 @@ package services;
 public interface ILucaSteamService {
 	
 	public void listarJuegosServicios();
-	public void filtrarPlataformaServicios();
+	public void filtrarPlataformaServicios(String empresa);
 
 }

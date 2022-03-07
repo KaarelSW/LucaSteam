@@ -22,9 +22,10 @@ import data.Listado;
 public class LucaSteamService implements ILucaSteamService {
 	
 	private IListado listado = new Listado();
+	
 
 	@Override
-	public void listarJuegos() {
+	public void listarJuegosServicios() {
 		listado.cargarCSV("vgsalesTab.csv"); //A falta de base de datos, hardcodeamos el archivo CSV
         listado.mostrarJuegos();		
     }	
@@ -32,8 +33,9 @@ public class LucaSteamService implements ILucaSteamService {
 	// En este metodo hacemos la llamado a la capa de Datos
 	
 	@Override
-	public void filtrarPlataformaServicios() {
-		listado.filtrarPlataforma();
+	public void filtrarPlataformaServicios(String empresa) {
+		
+		listado.filtrarPlataforma(empresa);
 	}
 
 }
