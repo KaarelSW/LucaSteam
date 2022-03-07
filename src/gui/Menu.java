@@ -25,7 +25,7 @@ public class Menu {
 		System.out.println("Seleccione una opción: ");
 		System.out.println("	1. Listar juegos ");
 		System.out.println("	2. Filtrar los juegos de Nintendo ");
-		System.out.println("	3. A�adir juego ");
+		System.out.println("	3. Añadir juego ");
 		System.out.println("	4. Filtrar los juegos de plataformas");
 		System.out.println("	0. Salir ");	
 		System.out.println("***************************");

@@ -117,7 +117,7 @@ public @Data class Listado implements IListado {
 	}
 	
 	//Creamos un metodo para filtrar por el genero plataforma
-	
+	@Override
 	public void filtrarGenero(String plataforma){
 		
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
