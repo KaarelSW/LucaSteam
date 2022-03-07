@@ -62,6 +62,8 @@ public class LucaSteam {
 				String[] array = solicitarDatos();
 				servicios.darDeAltaJuegoServicios(array);
 				break;
+			case 4:
+				servicios.filtrarGeneroServicios("PLATFORM");
 			case 0:
 				// Salir
 				seguir = false;

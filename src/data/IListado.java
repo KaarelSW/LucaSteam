@@ -24,6 +24,6 @@ public interface IListado {
 	public Juego crearJuego(String[] atributos);
 	public void filtrarJuegosPlataforma(String empresa);
 	public void darDeAltaJuego(String[] datos);
-	public void filtrarJuegosGenero(String plataforma);
+	public void filtrarGenero(String plataforma);
 
 }

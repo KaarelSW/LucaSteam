@@ -55,6 +55,11 @@ public class LucaSteamService implements ILucaSteamService {
 		listado.darDeAltaJuego(datos);	
     }	
 	
+	@Override
+	public void filtrarGeneroServicios(String plataforma) {
+		listado.filtrarGenero(plataforma);
+	}
+	
 	
 
 }
