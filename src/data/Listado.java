@@ -20,7 +20,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import lombok.Data;
+import model.Genero;
 import model.Juego;
+import model.Plataforma;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -71,15 +74,15 @@ public @Data class Listado implements IListado {
 	public Juego crearJuego(String[] atributos) {
 		
 		String nombre = atributos[1];
-		String plataforma = "";
+		Plataforma plataforma;
 		if(atributos[2].equals("3DS")) {
-			plataforma = "N3DS";
+			plataforma = Plataforma.valueOf("N3DS");
 		} else if (atributos[2].equals("2600")) {
-			plataforma = "DOSMILSEISCIENTOS";
+			plataforma = Plataforma.valueOf("DOSMILSEISCIENTOS");
 		}else if (atributos[2].equals("3DO")) {
-			plataforma = "TRESDO";
+			plataforma = Plataforma.valueOf("TRESDO");
 		} else {
-			plataforma = atributos[2].toUpperCase();
+			plataforma = Plataforma.valueOf(atributos[2].toUpperCase());
 		}	
 		int fechaPublicacion = 0;
 		if(atributos[3].equals("N/A")) {
@@ -87,11 +90,11 @@ public @Data class Listado implements IListado {
 		}else {
 			fechaPublicacion = Integer.parseInt(atributos[3]);
 		}			
-		String genero = "";
+		Genero genero;
 		if(atributos[4].equals("Role-Playing")) {
-			genero = "ROLEPLAYING";
+			genero = Genero.valueOf("ROLEPLAYING");
 		}else {
-			genero = atributos[4].toUpperCase();
+			genero = Genero.valueOf(atributos[4].toUpperCase());
 		}
 		String distribuidora = atributos[5];
 		return new Juego(nombre, plataforma, fechaPublicacion, genero, distribuidora);

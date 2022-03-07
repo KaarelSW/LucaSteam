@@ -20,9 +20,9 @@ import lombok.AllArgsConstructor;
 public @Data @AllArgsConstructor class Juego {
 	
 	private String nombre;
-	private String plataforma;
+	private Plataforma plataforma;
 	private int fechaPublicacion;
-	private String genero;
+	private Genero genero;
 	private String distribuidora;
 	
 	@Override
