@@ -10,6 +10,7 @@
  *Fecha: 04/03/22
  *
  *Version: 1
+ **Version 1.1 Añadido el metodo filtrarPlataformaServicios
  *
  */
 
