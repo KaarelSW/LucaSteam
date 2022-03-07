@@ -36,7 +36,7 @@ public class LucaSteamService implements ILucaSteamService {
 	@Override
 	public void filtrarPlataformaServicios(String empresa) {
 		
-		listado.filtrarPlataforma(empresa);
+		//listado.filtrarPlataforma(empresa);
 	}
 
 }

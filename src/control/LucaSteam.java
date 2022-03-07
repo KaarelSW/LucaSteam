@@ -44,6 +44,8 @@ public class LucaSteam {
 			case 1: 
 				servicios.listarJuegosServicios();
 				break;
+			case 2:
+				servicios.filtrarPlataformaServicios("Nintendo");
 			case 0:
 				// Salir
 				seguir = false;
@@ -53,5 +55,7 @@ public class LucaSteam {
 		}		
 		return seguir;		
 	}	
+	
+	
 	
 }
