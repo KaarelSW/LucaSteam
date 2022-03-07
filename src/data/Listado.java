@@ -115,5 +115,16 @@ public @Data class Listado implements IListado {
 		Juego juegoEnAlta=crearJuego(atributos);
 		listaJuegos.put(listaJuegos.size()+1, juegoEnAlta);
 	}
+	
+	//Creamos un metodo para filtrar por el genero plataforma
+	
+	public void filtrarJuegosGenero(String plataforma){
+		
+		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
+			if (entrada.getValue().getGenero().equals(Genero.PLATFORM)) {
+				System.out.println(entrada.toString());
+			}
+		}
+	}
 
 }
