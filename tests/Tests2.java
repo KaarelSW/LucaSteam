@@ -195,4 +195,16 @@ class Tests2 {
 		listado.darDeAltaJuego(atributos);
 		assertNotEquals(1993, listado.getListaJuegos().get(1).getFechaPublicacion());
 	}
+	
+	@Test
+	void comprobar_empresa_plataforma() {
+		juego.setPlataforma(Plataforma.DS);
+		assertEquals("Nintendo", juego.getPlataforma().getEmpresa());
+	}
+	
+	@Test
+	void comprobar_empresa_erronea_plataforma() {
+		juego.setPlataforma(Plataforma.PS);
+		assertNotEquals("Nintendo", juego.getPlataforma().getEmpresa());
+	}
 }
