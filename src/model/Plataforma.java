@@ -1,4 +1,17 @@
-package model;
+/**
+ * 
+ * @author Grupo02
+ * 
+ *Nombre: Juego
+ *
+ *Descripcion: Creamos los enumerados correspondientes a la clase plataforma
+ *y se les asocia un atributo String
+ *
+ *Fecha: 04/03/22
+ *
+ *Version: 1
+ *
+ */package model;
 
 public enum Plataforma {
 	WII("Nintendo"),
