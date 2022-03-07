@@ -74,6 +74,9 @@ public class LucaSteam {
 			case 5: 
 				servicios.mostrarDistribuidorasServicios();
 				break;
+			case 6: 
+				servicios.filtrarSigloXX();
+				break;
 			case 0:
 				// Salir
 				seguir = false;

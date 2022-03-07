@@ -67,6 +67,9 @@ public class LucaSteamService implements ILucaSteamService {
 		Mostrador.mostrarInforme(listado.filtrarGenero(genero));
 	}
 	
+	public void filtrarSigloXX() {
+		listado.filtrarSigloXX();
+	}
 	
 
 }

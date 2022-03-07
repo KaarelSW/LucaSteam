@@ -30,5 +30,6 @@ public interface ILucaSteamService {
 	public void mostrarJuegosServicios();
 	public void darDeAltaJuegoServicios(String[] datos);
 	public void filtrarGeneroServicios(String genero);
+	public void filtrarSigloXX();
 
 }
