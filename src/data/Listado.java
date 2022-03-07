@@ -136,11 +136,15 @@ public @Data class Listado implements IListado {
 	public ArrayList<String> filtrarGenero(String genero){
 		
 		ArrayList<String> juegosFiltrados = new ArrayList<String>();
-		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
-			
-			if (entrada.getValue().getGenero().equals(Genero.valueOf(genero.toUpperCase()))) {
-				juegosFiltrados.add(entrada.toString());
+		try {
+			for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
+				
+				if (entrada.getValue().getGenero().equals(Genero.valueOf(genero.toUpperCase()))) {
+					juegosFiltrados.add(entrada.toString());
+				}
 			}
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
 		}
 		return juegosFiltrados;
 	}
@@ -148,10 +152,8 @@ public @Data class Listado implements IListado {
 	public HashSet<String> mostrarDistribuidoras(){
 		
 		HashSet<String> distribuidoras = new HashSet<String>();
-		String editor = "";
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
-				editor = entrada.getValue().getDistribuidora();
-				distribuidoras.add(editor);
+				distribuidoras.add(entrada.getValue().getDistribuidora());
 			}
 		return distribuidoras;
 	}
