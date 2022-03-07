@@ -29,10 +29,11 @@ public class LucaSteamService implements ILucaSteamService {
         listado.mostrarJuegos();		
     }	
 	
+	// En este metodo hacemos la llamado a la capa de Datos
+	
 	@Override
 	public void filtrarPlataformaServicios() {
 		listado.filtrarPlataforma();
-		
 	}
 
 }
