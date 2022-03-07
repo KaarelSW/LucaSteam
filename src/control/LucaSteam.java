@@ -70,7 +70,7 @@ public class LucaSteam {
 				break;
 			case 4:
 				servicios.filtrarGeneroServicios("PLATFORM");
-
+				break;
 			case 5: 
 				servicios.mostrarDistribuidorasServicios();
 				break;

@@ -134,6 +134,7 @@ public @Data class Listado implements IListado {
 				System.out.println(entrada.toString());
 			}
 		}
+	}
 
 	public ArrayList<String> mostrarDistribuidoras(){
 		
