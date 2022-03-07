@@ -38,9 +38,13 @@ public class LucaSteamExcepciones extends Exception {
 		case 2:
 			level = Level.WARNING;
 			//año inferior a 1958
+			//campo vacío
+			//género inválido
+			//plataforma inválida
 			break;
 		case 3:
 			level = Level.INFO;
+			//año superior al actual
 			break;
 		default:
 			level = Level.INFO;

@@ -38,6 +38,8 @@ import model.Plataforma;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public @Data class Listado implements IListado {
 
@@ -89,6 +91,7 @@ public @Data class Listado implements IListado {
 
 	public Juego crearJuego(String[] atributos) throws LucaSteamExcepciones {
 		
+		if (atributos[1] == "" || atributos[2] == "" || atributos[3] == "" || atributos[4] == "" || atributos[5] == "" ) throw new LucaSteamExcepciones("Existe uno o varios campos vacíos", 2);
 		String nombre = atributos[1];
 		Plataforma plataforma;
 		if(atributos[2].equals("3DS")) {
@@ -97,23 +100,31 @@ public @Data class Listado implements IListado {
 			plataforma = Plataforma.valueOf("DOSMILSEISCIENTOS");
 		}else if (atributos[2].equals("3DO")) {
 			plataforma = Plataforma.valueOf("TRESDO");
-		} else {
-			plataforma = Plataforma.valueOf(atributos[2].toUpperCase());
+		} else {			
+			try {
+				plataforma = Plataforma.valueOf(atributos[2].toUpperCase());
+			}catch(IllegalArgumentException error) {
+				throw new LucaSteamExcepciones("Plataforma inválido: no es una de las plataformas contempladas", 2);
+			}
 		}	
 		int fechaPublicacion = 0;
 		if(atributos[3].equals("N/A")) {
 			fechaPublicacion = -1;
 		}else {
 			int fechaParseada = Integer.parseInt(atributos[3]);
-			if (fechaParseada < 1958) throw new LucaSteamExcepciones("Fecha incorrecta: año anterior a la fecha del primer videojuego",2);
+			if (fechaParseada < 1958) throw new LucaSteamExcepciones("Fecha incorrecta: año anterior a la fecha del primer videojuego", 2);
 			else fechaPublicacion = fechaParseada;
 		}			
 		Genero genero;
 		if(atributos[4].equals("Role-Playing")) {
 			genero = Genero.valueOf("ROLEPLAYING");
 		}else {
-			genero = Genero.valueOf(atributos[4].toUpperCase());
-		}
+			try {
+				genero = Genero.valueOf(atributos[4].toUpperCase());
+			}catch(IllegalArgumentException error) {
+				throw new LucaSteamExcepciones("Género inválido: no es uno de los géneros contemplados", 2);
+			}
+		}	
 		String distribuidora = atributos[5];
 		return new Juego(nombre, plataforma, fechaPublicacion, genero, distribuidora);
 	}
@@ -134,6 +145,8 @@ public @Data class Listado implements IListado {
 		
 		Juego juegoEnAlta=crearJuego(atributos);
 		listaJuegos.put(listaJuegos.size()+1, juegoEnAlta);
+		int fecha = LocalDate.now().getYear();
+		if(Integer.parseInt(atributos[3]) > fecha) throw new LucaSteamExcepciones("Early Access: Este juego no ha salido aún.", 3);
 	}
 	
 

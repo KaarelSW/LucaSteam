@@ -25,16 +25,16 @@ public class Menu {
 
 	public void mostrarMenu(){
 		System.out.println("");
-		System.out.println(" Menú principal  ");
+		System.out.println(" Pantalla de opciones ");
 		System.out.println("");
 		System.out.println("***************************");
 		System.out.println("Seleccione una opción: ");
 		System.out.println("	1. Listar juegos ");
 		System.out.println("	2. Filtrar los juegos de Nintendo ");
-		System.out.println("	3. Añadir juego ");
+		System.out.println("	3. Agregar juego ");
 		System.out.println("	4. Filtrar los juegos de plataformas");
 		System.out.println("	5. Listar distribuidoras ");
-		System.out.println("	6. Filtrar sigloXX ");
+		System.out.println("	6. Filtrar siglo XX ");
 		System.out.println("	0. Salir ");	
 		System.out.println("***************************");
 		System.out.println(">> ");	
