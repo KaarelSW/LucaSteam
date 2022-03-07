@@ -4,6 +4,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashSet;
+
 import org.junit.jupiter.api.Test;
 import data.IListado;
 import data.Listado;
@@ -207,4 +209,117 @@ class Tests2 {
 		juego.setPlataforma(Plataforma.PS);
 		assertNotEquals("Nintendo", juego.getPlataforma().getEmpresa());
 	}
+
+	@Test
+	void filtrarSigloXX_cuenta_bien() {
+		String[] juego1 = { "1", "Sonic", "wii", "1994", "platform", "distribuidora" };
+		String[] juego2 = { "2", "Fifa furbo", "PS4", "2023", "sports", "distribuidora" };
+		listado.darDeAltaJuego(juego1);
+		listado.darDeAltaJuego(juego2);
+		
+		int esperado = 1;
+		int resultado = listado.filtrarSigloXX().size();
+		
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	void filtrarSigloXX_cuenta_mal() {
+		String[] juego1 = { "1", "Fifa skere", "PS4", "2025", "sports", "distribuidora" };
+		String[] juego2 = { "2", "Fifa furbo", "PS4", "2023", "sports", "distribuidora" };
+		listado.darDeAltaJuego(juego1);
+		listado.darDeAltaJuego(juego2);
+		
+		int esperado = 1;
+		int resultado = listado.filtrarSigloXX().size();
+		
+		assertEquals(esperado, resultado);
+	}
+	
+	@Test
+	void comprobar_mostrar_distribuidoras_numero_correcto() {
+		listado.cargarCSV("vgsalesTab.csv");
+		HashSet<String> distribuidoras = listado.mostrarDistribuidoras();
+		assertEquals(579, distribuidoras.size());
+	}
+	
+	@Test
+	void comprobar_mostrar_distribuidoras_numero_incorrecto() {
+		listado.cargarCSV("vgsalesTab.csv");
+		HashSet<String> distribuidoras = listado.mostrarDistribuidoras();
+		assertNotEquals(580, distribuidoras.size());
+	}
+	
+	@Test
+	void comprobar_mostrar_distribuidoras_lista_vacia() {
+		listado.cargarCSV("falso.csv");
+		HashSet<String> distribuidoras = listado.mostrarDistribuidoras();
+		assertEquals(0, distribuidoras.size());
+	}
+	
+	@Test
+	void comprobar_mostrar_distribuidoras_correctamente() {
+		Juego juego2 = new Juego("Sonic", Plataforma.WII, 1994, Genero.PLATFORM, "distribuidora");
+		Juego juego3 = new Juego("Sonic", Plataforma.WII, 1994, Genero.PLATFORM, "noentiendo");
+		listado.getListaJuegos().put(1, juego);
+		listado.getListaJuegos().put(2, juego2);
+		listado.getListaJuegos().put(3, juego3);
+		HashSet<String> distribuidoras = listado.mostrarDistribuidoras();
+		HashSet<String> esperado = new HashSet<String>();
+		esperado.add("Holi");
+		esperado.add("distribuidora");
+		esperado.add("noentiendo");
+		assertEquals(esperado, distribuidoras);
+	}
+	
+	@Test
+		void comprobar_mostrar_juegos_vacio() {
+		assertEquals(true, listado.mostrarJuegos().isEmpty());
+	}
+	
+	@Test
+	void comprobar_mostrar_juegos_cargado() {
+		listado.getListaJuegos().put(1, juego);
+		assertEquals(1, listado.mostrarJuegos().size());
+	}
+	
+	@Test
+	void comprobar_empresa_plataforma_no_valida() {
+		listado.cargarCSV("vgsalesTab.csv");
+		assertEquals(true, listado.filtrarJuegosPlataforma("falso").isEmpty());
+	}
+	
+	@Test
+	void comprobar_empresa_plataforma_valida() {
+		listado.cargarCSV("vgsalesTab.csv");
+		assertEquals(false, listado.filtrarJuegosPlataforma("Nintendo").isEmpty());
+	}
+	
+	@Test
+	void comprobar_filtrado_genero_invalido() {
+		listado.cargarCSV("vgsalesTab.csv");
+		assertEquals(true, listado.filtrarGenero("falso").isEmpty());
+	}
+	
+	@Test
+	void comprobar_filtrado_genero_valido() {
+		listado.cargarCSV("vgsalesTab.csv");
+		assertEquals(false, listado.filtrarGenero("shooter").isEmpty());
+	}
+	
+	@Test
+	void comprobar_mostrar_distribuidoras_incorrectamente() {
+		Juego juego2 = new Juego("Sonic", Plataforma.WII, 1994, Genero.PLATFORM, "distribuidora");
+		Juego juego3 = new Juego("Sonic", Plataforma.WII, 1994, Genero.PLATFORM, "noentiendo");
+		listado.getListaJuegos().put(1, juego);
+		listado.getListaJuegos().put(2, juego2);
+		listado.getListaJuegos().put(3, juego3);
+		HashSet<String> distribuidoras = listado.mostrarDistribuidoras();
+		HashSet<String> esperado = new HashSet<String>();
+		esperado.add("Holi");
+		esperado.add("distribuidore");
+		esperado.add("sientiendo");
+		assertNotEquals(esperado, distribuidoras);
+	}
+	
 }
