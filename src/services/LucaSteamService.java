@@ -11,6 +11,7 @@
  *Fecha: 07/03/22
  *
  *Version: 2
+ *Version 2.1 Añadido el metodo filtrarPlataformaServicios
  *
  */
 
@@ -22,11 +23,20 @@ import data.Listado;
 public class LucaSteamService implements ILucaSteamService {
 	
 	private IListado listado = new Listado();
+	
 
 	@Override
-	public void listarJuegos() {
+	public void listarJuegosServicios() {
 		listado.cargarCSV("vgsalesTab.csv"); //A falta de base de datos, hardcodeamos el archivo CSV
         listado.mostrarJuegos();		
     }	
+	
+	// En este metodo hacemos la llamado a la capa de Datos
+	
+	@Override
+	public void filtrarPlataformaServicios(String empresa) {
+		
+		//listado.filtrarPlataforma(empresa);
+	}
 
 }

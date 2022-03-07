@@ -42,8 +42,10 @@ public class LucaSteam {
 		try {
 			switch(LeerDatos.LeerInt()) {
 			case 1: 
-				servicios.listarJuegos();
+				servicios.listarJuegosServicios();
 				break;
+			case 2:
+				servicios.filtrarPlataformaServicios("Nintendo");
 			case 0:
 				// Salir
 				seguir = false;
@@ -53,5 +55,7 @@ public class LucaSteam {
 		}		
 		return seguir;		
 	}	
+	
+	
 	
 }
