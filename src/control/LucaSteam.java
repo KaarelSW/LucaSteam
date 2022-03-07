@@ -28,7 +28,7 @@ public class LucaSteam {
 	public void abrirMenu() {
 		
 		boolean seguir = true;
-		servicios.cargarDatos();
+		servicios.cargarCSVServicios();
 		do {
 			new Menu().mostrarMenu();
 			seguir = this.selectorDeOpciones();	
@@ -43,7 +43,7 @@ public class LucaSteam {
 		try {
 			switch(LeerDatos.LeerInt()) {
 			case 1: 
-				servicios.listarJuegos();
+				servicios.mostrarJuegosServicios();
 				break;
 			case 2: 
 				servicios.darDeAltaJuegoServicios();

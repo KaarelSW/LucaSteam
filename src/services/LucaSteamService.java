@@ -24,12 +24,12 @@ public class LucaSteamService implements ILucaSteamService {
 	private IListado listado = new Listado();
 	
 	@Override
-	public void cargarDatos() {
+	public void cargarCSVServicios() {
 		listado.cargarCSV("vgsalesTab.csv");	
     }	
 
 	@Override
-	public void listarJuegos() {
+	public void mostrarJuegosServicios() {
 		listado.mostrarJuegos();		
     }	
 

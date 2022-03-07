@@ -17,8 +17,8 @@ package services;
 
 public interface ILucaSteamService {
 	
-	public void cargarDatos();
-	public void listarJuegos();
+	public void cargarCSVServicios();
+	public void mostrarJuegosServicios();
 	public void darDeAltaJuegoServicios();
 
 }
