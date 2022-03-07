@@ -40,7 +40,7 @@ public class LucaSteamService implements ILucaSteamService {
 
 	@Override
 	public void mostrarJuegosServicios() {
-		listado.mostrarJuegos();		
+		Mostrador.mostrarInforme(listado.mostrarJuegos());		
     }	
 	
 	// En este metodo hacemos la llamado a la capa de Datos
@@ -68,7 +68,7 @@ public class LucaSteamService implements ILucaSteamService {
 	}
 	
 	public void filtrarSigloXX() {
-		listado.filtrarSigloXX();
+		Mostrador.mostrarInforme(listado.filtrarSigloXX());
 	}
 	
 

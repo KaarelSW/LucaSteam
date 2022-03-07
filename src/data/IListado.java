@@ -28,13 +28,13 @@ import model.Juego;
 
 public interface IListado {
 	
-	public void mostrarJuegos();
+	public ArrayList<String> mostrarJuegos();
 	public boolean cargarCSV(String url);
 	public Juego crearJuego(String[] atributos);
 	public ArrayList<String> filtrarJuegosPlataforma(String empresa);
 	public void darDeAltaJuego(String[] datos);
-	public ArrayList<String> filtrarGenero(String plataforma);
+	public ArrayList<String> filtrarGenero(String genero);
 	public HashSet<String> mostrarDistribuidoras();
-	public void filtrarSigloXX();
+	public ArrayList<String> filtrarSigloXX();
 
 }

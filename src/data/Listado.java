@@ -52,11 +52,13 @@ public @Data class Listado implements IListado {
 
 	// Creamos un metodo para recorrer el el mapa
 
-	public void mostrarJuegos(){
+	public ArrayList<String> mostrarJuegos(){
 			
+		ArrayList<String> juegosTotales = new ArrayList<String>();
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
-			System.out.println(entrada.toString());
+			juegosTotales.add(entrada.toString());
 		}
+		return juegosTotales;
 	}
 
 	public boolean cargarCSV(String url) {
@@ -154,13 +156,14 @@ public @Data class Listado implements IListado {
 		return distribuidoras;
 	}
 	
-	public void filtrarSigloXX(){
-		
+	public ArrayList<String> filtrarSigloXX(){
+		ArrayList<String> juegosFiltrados = new ArrayList<String>();
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
 			if ((entrada.getValue().getFechaPublicacion()>=1901)&&(entrada.getValue().getFechaPublicacion()<=2000)) {
-				System.out.println(entrada.toString());
+				juegosFiltrados.add(entrada.toString());
 			}
 		}
+		return juegosFiltrados;
 	}
 	
 
