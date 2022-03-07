@@ -11,6 +11,12 @@
  *
  *Version: 1
  *
+ *Nueva opcion para indicar que se pulse el 4? para mostrar las distribuidoras
+ *
+ *Fecha: 07/03/22
+ *
+ *Version: 1
+ *
  */
 
 package gui;
@@ -27,6 +33,7 @@ public class Menu {
 		System.out.println("	2. Filtrar los juegos de Nintendo ");
 		System.out.println("	3. Añadir juego ");
 		System.out.println("	4. Filtrar los juegos de plataformas");
+		System.out.println("	5. Listar distribuidoras ");
 		System.out.println("	0. Salir ");	
 		System.out.println("***************************");
 		System.out.println(">> ");	
