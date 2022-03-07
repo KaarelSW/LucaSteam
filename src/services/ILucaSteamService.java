@@ -11,13 +11,20 @@
  *
  *Version: 1
  *
+ *Nuevo metodo darDeAltaJuegosServicios() 
+ *
+ *Fecha: 07/03/22
+ *
+ *Version: 2
+ *
  */
 
 package services;
 
 public interface ILucaSteamService {
 	
-	public void listarJuegos();
-	
+	public void cargarCSVServicios();
+	public void mostrarJuegosServicios();
+	public void darDeAltaJuegoServicios();
 
 }

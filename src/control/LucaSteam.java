@@ -7,9 +7,19 @@
  *Descripcion: Esta clase llama a la capa de servicios una vez se ha elegido una de las opciones que se
  *muestran en pantalla. De momento las opciones son mostrar la lista de juegos o salir.
  *
+ *Ahora las opciones incluyen dar de alta un juego para sumarlo a la lista. Y se cargan los datos al 
+ *abrir la aplicacion en lugar de al mostrar la lista de juegos.
+ *
  *Fecha: 04/03/22
  *
- *Version: 1
+ *Version: 2
+ *
+ *Ahora las opciones incluyen dar de alta un juego para sumarlo a la lista. Y se cargan los datos al 
+ *abrir la aplicacion en lugar de al mostrar la lista de juegos.
+ *
+ *Fecha: 07/03/22
+ *
+ *Version: 3
  *
  */
 
@@ -28,6 +38,7 @@ public class LucaSteam {
 	public void abrirMenu() {
 		
 		boolean seguir = true;
+		servicios.cargarCSVServicios();
 		do {
 			new Menu().mostrarMenu();
 			seguir = this.selectorDeOpciones();	
@@ -42,7 +53,10 @@ public class LucaSteam {
 		try {
 			switch(LeerDatos.LeerInt()) {
 			case 1: 
-				servicios.listarJuegos();
+				servicios.mostrarJuegosServicios();
+				break;
+			case 2: 
+				servicios.darDeAltaJuegoServicios();
 				break;
 			case 3: 
 				String[] array = solicitarDatos();

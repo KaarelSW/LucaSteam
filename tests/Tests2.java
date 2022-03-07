@@ -120,9 +120,16 @@ class Tests2 {
 	
 	@Test
 	void crear_juego_con_nombre_vacio() {
-		String[] juegos = { "5", "", "wii", "5", "platform", "distribuidora" };
-		Juego juego1 = listado.crearJuego(juegos);
+		String[] atributos = { "5", "", "wii", "5", "platform", "distribuidora" };
+		Juego juego1 = listado.crearJuego(atributos);
 		assertEquals("", juego1.getNombre());
+	}
+	
+	@Test
+	void comrpobar_datos_juego_al_dar_alta_son_correctos() {
+		String[] atributos = { "5", "", "wii", "5", "platform", "distribuidora" };
+		listado.darAltaJuego(atributos);
+		assertEquals("wii", listado.getListaJuegos().get(1).getPlataforma());
 	}
 
 }

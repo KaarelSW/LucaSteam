@@ -8,9 +8,17 @@
  *metodos cargarCSV(String url) y mostrarJuegos() para leer el archivo CSV, guardar los Juegos en la lista
  *y mostrarlos por pantalla.
  *
- *Fecha: 07/03/22
+ *Fecha: 06/03/22
  *
  *Version: 2
+ *
+ *Ahora cargarCSV se llama de forma separada y tambien se ha creado el metodo darAltaJuegosServicios para 
+ *llamar tanto a solicitarDatos() como a darDeAltaJuego(datos) de listado.
+ *
+ *Fecha: 07/03/22
+ *
+ *Version: 3
+ *
  *
  */
 
@@ -22,11 +30,21 @@ import data.Listado;
 public class LucaSteamService implements ILucaSteamService {
 	
 	private IListado listado = new Listado();
+	
+	@Override
+	public void cargarCSVServicios() {
+		listado.cargarCSV("vgsalesTab.csv");	
+    }	
 
 	@Override
-	public void listarJuegos() {
-		listado.cargarCSV("vgsalesTab.csv"); //A falta de base de datos, hardcodeamos el archivo CSV
-        listado.mostrarJuegos();		
+	public void mostrarJuegosServicios() {
+		listado.mostrarJuegos();		
+    }	
+
+	@Override
+	public void darDeAltaJuegoServicios() {
+		String[] datos = listado.solicitarDatos();
+		listado.darDeAltaJuego(datos);	
     }	
 	
 	
