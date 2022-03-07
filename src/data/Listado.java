@@ -99,5 +99,12 @@ public @Data class Listado implements IListado {
 		String distribuidora = atributos[5];
 		return new Juego(nombre, plataforma, fechaPublicacion, genero, distribuidora);
 	}
+	
+
+	@Override
+	public void darDeAltaJuego(String[] atributos) {
+		Juego juegoEnAlta=crearJuego(atributos);
+		listaJuegos.put(listaJuegos.size()+1, juegoEnAlta);
+	}
 
 }
