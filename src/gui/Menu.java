@@ -24,6 +24,7 @@ public class Menu {
 		System.out.println("***************************");
 		System.out.println("Seleccione una opciÃ³n: ");
 		System.out.println("	1. Listar juegos ");
+		System.out.println("	3. Añadir juego ");
 		System.out.println("	0. Salir ");	
 		System.out.println("***************************");
 		System.out.println(">> ");	
