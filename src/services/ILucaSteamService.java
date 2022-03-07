@@ -17,6 +17,7 @@ package services;
 
 public interface ILucaSteamService {
 	
-	public void listarJuegos();
+	public void listarJuegosServicios();
+	public void filtrarPlataformaServicios();
 
 }
