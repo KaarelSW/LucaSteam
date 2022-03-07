@@ -99,5 +99,14 @@ public @Data class Listado implements IListado {
 		String distribuidora = atributos[5];
 		return new Juego(nombre, plataforma, fechaPublicacion, genero, distribuidora);
 	}
+	
+	public void mostrarFiltrarJuegosPlataforma(String empresa){
+		
+		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
+			if (entrada.getValue().getPlataforma().getEmpresa() == empresa) {
+				System.out.println(entrada.toString());
+			}
+		}
+	}
 
 }
