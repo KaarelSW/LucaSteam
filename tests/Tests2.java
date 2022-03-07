@@ -9,6 +9,7 @@ import data.IListado;
 import data.Listado;
 import model.Genero;
 import model.Juego;
+import model.Plataforma;
 
 class Tests2 {
 	
@@ -126,10 +127,72 @@ class Tests2 {
 	}
 	
 	@Test
-	void comrpobar_distribuidora_juego_al_dar_alta_es_correcta() {
-		String[] atributos = { "5", "", "wii", "5", "platform", "distribuidora" };
+	void comprobar_distribuidora_juego_al_dar_alta_es_correcta() {
+		String[] atributos = { "5", "Croc", "ps", "5", "platform", "distribuidora" };
 		listado.darDeAltaJuego(atributos);
 		assertEquals("distribuidora", listado.getListaJuegos().get(1).getDistribuidora());
 	}
-
+	
+	@Test
+	void comprobar_distribuidora_juego_al_dar_alta_no_es_correcta() {
+		String[] atributos = { "5", "Crash Bandicoot", "ps", "5", "platform", "alfa" };
+		listado.darDeAltaJuego(atributos);
+		assertNotEquals("beta", listado.getListaJuegos().get(1).getDistribuidora());
+	}
+	
+	@Test
+	void comprobar_nombre_juego_al_dar_alta_es_correcto() {
+		String[] atributos = { "5", "Sonic", "wii", "5", "platform", "distribuidora" };
+		listado.darDeAltaJuego(atributos);
+		assertEquals("Sonic", listado.getListaJuegos().get(1).getNombre());
+	}
+	
+	@Test
+	void comprobar_nombre_juego_al_dar_alta_no_es_correcto() {
+		String[] atributos = { "5", "Sonic", "wii", "5", "platform", "distribuidora" };
+		listado.darDeAltaJuego(atributos);
+		assertNotEquals("Sanic", listado.getListaJuegos().get(1).getNombre());
+	}
+	
+	@Test
+	void comprobar_plataforma_juego_al_dar_alta_es_correcta() {
+		String[] atributos = { "5", "Wii Sports", "wii", "5", "platform", "distribuidora" };
+		listado.darDeAltaJuego(atributos);
+		assertEquals(Plataforma.WII, listado.getListaJuegos().get(1).getPlataforma());
+	}
+	
+	@Test
+	void comprobar_plataforma_juego_al_dar_alta_no_es_correcta() {
+		String[] atributos = { "5", "inFamous", "ps3", "5", "platform", "alfa" };
+		listado.darDeAltaJuego(atributos);
+		assertNotEquals(Plataforma.WII, listado.getListaJuegos().get(1).getPlataforma());
+	}
+	
+	@Test
+	void comprobar_genero_juego_al_dar_alta_es_correcto() {
+		String[] atributos = { "5", "Sonic", "wii", "5", "action", "distribuidora" };
+		listado.darDeAltaJuego(atributos);
+		assertEquals(Genero.ACTION, listado.getListaJuegos().get(1).getGenero());
+	}
+	
+	@Test
+	void comprobar_genero_juego_al_dar_alta_no_es_correcto() {
+		String[] atributos = { "5", "Sonic", "wii", "5", "platform", "distribuidora" };
+		listado.darDeAltaJuego(atributos);
+		assertNotEquals(Genero.ACTION, listado.getListaJuegos().get(1).getGenero());
+	}
+	
+	@Test
+	void comprobar_fecha_publicacion_juego_al_dar_alta_es_correcto() {
+		String[] atributos = { "5", "Sonic", "wii", "1994", "action", "distribuidora" };
+		listado.darDeAltaJuego(atributos);
+		assertEquals(1994, listado.getListaJuegos().get(1).getFechaPublicacion());
+	}
+	
+	@Test
+	void comprobar_fecha_publicacion_juego_al_dar_alta_no_es_correcto() {
+		String[] atributos = { "5", "Sonic", "wii", "1994", "platform", "distribuidora" };
+		listado.darDeAltaJuego(atributos);
+		assertNotEquals(1993, listado.getListaJuegos().get(1).getFechaPublicacion());
+	}
 }
