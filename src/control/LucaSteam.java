@@ -21,6 +21,12 @@
  *
  *Version: 3
  *
+ *Incluida la opcion de mostrar las distribuidoras de los juegos que hay en la lista.
+ *
+ *Fecha: 07/03/22
+ *
+ *Version: 4
+ *
  */
 
 package control;
@@ -61,6 +67,9 @@ public class LucaSteam {
 			case 3: 
 				String[] array = solicitarDatos();
 				servicios.darDeAltaJuegoServicios(array);
+				break;
+			case 4: 
+				servicios.mostrarDistribuidorasServicios();
 				break;
 			case 0:
 				// Salir

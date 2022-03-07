@@ -24,7 +24,7 @@ package services;
 
 public interface ILucaSteamService {
 	
-
+	public void mostrarDistribuidorasServicios();
 	public void filtrarPlataformaServicios(String empresa);
 	public void cargarCSVServicios();
 	public void mostrarJuegosServicios();

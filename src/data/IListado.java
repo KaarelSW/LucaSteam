@@ -11,9 +11,18 @@
  *
  *Version: 1
  *
+ *Añadido el metodo mostrarDistribuidoras()
+ *
+ *Fecha: 07/03/22
+ *
+ *Version: 2
+ *
+ *
  */
 
 package data;
+
+import java.util.ArrayList;
 
 import model.Juego;
 
@@ -24,5 +33,6 @@ public interface IListado {
 	public Juego crearJuego(String[] atributos);
 	public void filtrarJuegosPlataforma(String empresa);
 	public void darDeAltaJuego(String[] datos);
+	public ArrayList<String> mostrarDistribuidoras();
 
 }

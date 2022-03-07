@@ -12,10 +12,18 @@
  *
  *Version: 2
  *
+ *Nuevo metodo para mostrar las distribuidoras de los juegos en la lista. Devuelve un array con las distribuidoras 
+ *y las muestra por pantalla.
+ *
+ *Fecha: 07/03/22
+ *
+ *Version: 3
+ *
  */
 
 package data;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -109,10 +117,26 @@ public @Data class Listado implements IListado {
 		}
 	}
 
-	@Override
 	public void darDeAltaJuego(String[] atributos) {
+		
 		Juego juegoEnAlta=crearJuego(atributos);
 		listaJuegos.put(listaJuegos.size()+1, juegoEnAlta);
+	}
+	
+	public ArrayList<String> mostrarDistribuidoras(){
+		
+		ArrayList<String> distribuidoras = new ArrayList<String>();
+		String editor = "";
+		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
+			if (distribuidoras.contains(entrada.getValue().getDistribuidora())) {
+				continue;
+			}else {
+				editor = entrada.getValue().getDistribuidora();
+				distribuidoras.add(editor);
+				System.out.println(editor);
+			}
+		}
+		return distribuidoras;
 	}
 
 }
