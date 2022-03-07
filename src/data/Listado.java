@@ -107,6 +107,7 @@ public @Data class Listado implements IListado {
 				System.out.println(entrada.toString());
 			}
 		}
+	}
 
 	@Override
 	public void darDeAltaJuego(String[] atributos) {
