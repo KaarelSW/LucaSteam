@@ -22,6 +22,6 @@ public interface IListado {
 	public void mostrarJuegos();
 	public boolean cargarCSV(String url);
 	public Juego crearJuego(String[] atributos);
-	public void darDeAltaJuego(String[] atributos);
+	public void darDeAltaJuego(String[] datos);
 
 }

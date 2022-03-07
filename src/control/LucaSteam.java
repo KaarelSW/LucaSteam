@@ -55,12 +55,9 @@ public class LucaSteam {
 			case 1: 
 				servicios.mostrarJuegosServicios();
 				break;
-			case 2: 
-				servicios.darDeAltaJuegoServicios();
-				break;
 			case 3: 
 				String[] array = solicitarDatos();
-				//servicios.darDeAltaJuegos();
+				servicios.darDeAltaJuegoServicios(array);
 				break;
 			case 0:
 				// Salir
@@ -74,14 +71,13 @@ public class LucaSteam {
 	
 	public String[] solicitarDatos() {
 		
-		String atributos[] = new String[5];
-		LeerDatos entrada = new LeerDatos();
+		String atributos[] = new String[6];
 		
-		atributos[0] = entrada.LeerTexto("Introduzca el nombre del juego");
-		atributos[1] = entrada.LeerTexto("Introduzca su plataforma");
-		atributos[2] = entrada.LeerTexto("Introduzca el año de salida de " + atributos[0]);
-		atributos[3] = entrada.LeerTexto("¿A qué género pertenece?");
-		atributos[4] = entrada.LeerTexto("Por último, indique la distribuidora");
+		atributos[1] = LeerDatos.LeerTexto("Introduzca el nombre del juego");
+		atributos[2] = LeerDatos.LeerTexto("Introduzca su plataforma");
+		atributos[3] = LeerDatos.LeerTexto("Introduzca el aï¿½o de salida de " + atributos[1]);
+		atributos[4] = LeerDatos.LeerTexto("ï¿½A quï¿½ gï¿½nero pertenece?");
+		atributos[5] = LeerDatos.LeerTexto("Por ï¿½ltimo, indique la distribuidora");
 		
 		return atributos;
 	}

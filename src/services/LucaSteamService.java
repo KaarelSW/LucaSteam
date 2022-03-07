@@ -42,8 +42,7 @@ public class LucaSteamService implements ILucaSteamService {
     }	
 
 	@Override
-	public void darDeAltaJuegoServicios() {
-		String[] datos = listado.solicitarDatos();
+	public void darDeAltaJuegoServicios(String[] datos) {
 		listado.darDeAltaJuego(datos);	
     }	
 	

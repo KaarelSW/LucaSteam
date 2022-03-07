@@ -126,10 +126,10 @@ class Tests2 {
 	}
 	
 	@Test
-	void comrpobar_datos_juego_al_dar_alta_son_correctos() {
+	void comrpobar_distribuidora_juego_al_dar_alta_es_correcta() {
 		String[] atributos = { "5", "", "wii", "5", "platform", "distribuidora" };
-		listado.darAltaJuego(atributos);
-		assertEquals("wii", listado.getListaJuegos().get(1).getPlataforma());
+		listado.darDeAltaJuego(atributos);
+		assertEquals("distribuidora", listado.getListaJuegos().get(1).getDistribuidora());
 	}
 
 }

@@ -25,6 +25,6 @@ public interface ILucaSteamService {
 	
 	public void cargarCSVServicios();
 	public void mostrarJuegosServicios();
-	public void darDeAltaJuegoServicios();
+	public void darDeAltaJuegoServicios(String[] datos);
 
 }
