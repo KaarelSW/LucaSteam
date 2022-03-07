@@ -35,5 +35,6 @@ public interface IListado {
 	public void darDeAltaJuego(String[] datos);
 	public void filtrarGenero(String plataforma);
 	public ArrayList<String> mostrarDistribuidoras();
+	public void filtrarSigloXX();
 
 }

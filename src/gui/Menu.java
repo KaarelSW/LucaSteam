@@ -34,6 +34,7 @@ public class Menu {
 		System.out.println("	3. Añadir juego ");
 		System.out.println("	4. Filtrar los juegos de plataformas");
 		System.out.println("	5. Listar distribuidoras ");
+		System.out.println("	6. Filtrar sigloXX ");
 		System.out.println("	0. Salir ");	
 		System.out.println("***************************");
 		System.out.println(">> ");	

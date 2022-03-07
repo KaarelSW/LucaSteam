@@ -151,5 +151,15 @@ public @Data class Listado implements IListado {
 		}
 		return distribuidoras;
 	}
+	
+	public void filtrarSigloXX(){
+		
+		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
+			if ((entrada.getValue().getFechaPublicacion()>=1901)&&(entrada.getValue().getFechaPublicacion()<=2000)) {
+				System.out.println(entrada.toString());
+			}
+		}
+	}
+	
 
 }
