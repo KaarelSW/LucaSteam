@@ -22,11 +22,21 @@ import data.Listado;
 public class LucaSteamService implements ILucaSteamService {
 	
 	private IListado listado = new Listado();
+	
+	@Override
+	public void cargarDatos() {
+		listado.cargarCSV("vgsalesTab.csv");	
+    }	
 
 	@Override
 	public void listarJuegos() {
-		listado.cargarCSV("vgsalesTab.csv"); //A falta de base de datos, hardcodeamos el archivo CSV
-        listado.mostrarJuegos();		
+		listado.mostrarJuegos();		
+    }	
+
+	@Override
+	public void darDeAltaJuegoServicios() {
+		String[] datos = listado.solicitarDatos();
+		listado.darDeAltaJuego(datos);	
     }	
 
 }
