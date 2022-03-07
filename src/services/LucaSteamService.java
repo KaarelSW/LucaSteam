@@ -27,6 +27,7 @@ package services;
 
 import data.IListado;
 import data.Listado;
+import utils.Mostrador;
 
 public class LucaSteamService implements ILucaSteamService {
 	
@@ -47,7 +48,7 @@ public class LucaSteamService implements ILucaSteamService {
 	@Override
 	public void filtrarPlataformaServicios(String empresa) {
 		
-		listado.filtrarJuegosPlataforma(empresa);
+		Mostrador.mostrarInforme(listado.filtrarJuegosPlataforma(empresa));
 	}
 
 	@Override
@@ -57,13 +58,13 @@ public class LucaSteamService implements ILucaSteamService {
 
 	@Override
 	public void mostrarDistribuidorasServicios() {
-		listado.mostrarDistribuidoras();
+		Mostrador.mostrarInforme(listado.mostrarDistribuidoras());
 		
 	}	
 	
 	@Override
-	public void filtrarGeneroServicios(String plataforma) {
-		listado.filtrarGenero(plataforma);
+	public void filtrarGeneroServicios(String genero) {
+		Mostrador.mostrarInforme(listado.filtrarGenero(genero));
 	}
 	
 	

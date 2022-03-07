@@ -26,6 +26,7 @@ package data;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 import lombok.Data;
@@ -109,13 +110,16 @@ public @Data class Listado implements IListado {
 		return new Juego(nombre, plataforma, fechaPublicacion, genero, distribuidora);
 	}
 	
-	public void filtrarJuegosPlataforma(String empresa){
+	public ArrayList<String> filtrarJuegosPlataforma(String empresa){
 		
+		ArrayList<String> juegosFiltrados = new ArrayList<String>();
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
+			
 			if (entrada.getValue().getPlataforma().getEmpresa() == empresa) {
-				System.out.println(entrada.toString());
+				juegosFiltrados.add(entrada.toString());
 			}
 		}
+		return juegosFiltrados;
 	}
 
 	public void darDeAltaJuego(String[] atributos) {
@@ -126,29 +130,27 @@ public @Data class Listado implements IListado {
 	
 
 	//Creamos un metodo para filtrar por el genero plataforma
-	@Override
-	public void filtrarGenero(String plataforma){
+
+	public ArrayList<String> filtrarGenero(String genero){
 		
+		ArrayList<String> juegosFiltrados = new ArrayList<String>();
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
-			if (entrada.getValue().getGenero().equals(Genero.PLATFORM)) {
-				System.out.println(entrada.toString());
+			
+			if (entrada.getValue().getGenero().equals(Genero.valueOf(genero.toUpperCase()))) {
+				juegosFiltrados.add(entrada.toString());
 			}
 		}
+		return juegosFiltrados;
 	}
 
-	public ArrayList<String> mostrarDistribuidoras(){
+	public HashSet<String> mostrarDistribuidoras(){
 		
-		ArrayList<String> distribuidoras = new ArrayList<String>();
+		HashSet<String> distribuidoras = new HashSet<String>();
 		String editor = "";
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
-			if (distribuidoras.contains(entrada.getValue().getDistribuidora())) {
-				continue;
-			}else {
 				editor = entrada.getValue().getDistribuidora();
 				distribuidoras.add(editor);
-				System.out.println(editor);
 			}
-		}
 		return distribuidoras;
 	}
 

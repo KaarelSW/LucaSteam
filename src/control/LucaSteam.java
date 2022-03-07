@@ -69,7 +69,7 @@ public class LucaSteam {
 				servicios.darDeAltaJuegoServicios(array);
 				break;
 			case 4:
-				servicios.filtrarGeneroServicios("PLATFORM");
+				servicios.filtrarGeneroServicios("Platform");
 				break;
 			case 5: 
 				servicios.mostrarDistribuidorasServicios();

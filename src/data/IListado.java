@@ -23,7 +23,7 @@
 package data;
 
 import java.util.ArrayList;
-
+import java.util.HashSet;
 import model.Juego;
 
 public interface IListado {
@@ -31,9 +31,9 @@ public interface IListado {
 	public void mostrarJuegos();
 	public boolean cargarCSV(String url);
 	public Juego crearJuego(String[] atributos);
-	public void filtrarJuegosPlataforma(String empresa);
+	public ArrayList<String> filtrarJuegosPlataforma(String empresa);
 	public void darDeAltaJuego(String[] datos);
-	public void filtrarGenero(String plataforma);
-	public ArrayList<String> mostrarDistribuidoras();
+	public ArrayList<String> filtrarGenero(String plataforma);
+	public HashSet<String> mostrarDistribuidoras();
 
 }
