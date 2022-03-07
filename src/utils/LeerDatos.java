@@ -23,4 +23,16 @@ public class LeerDatos {
 		return input.nextInt();
 	}
 
+	public static int LeerInt(String msg) {
+		System.out.println(msg);
+		Scanner input = new Scanner(System.in);
+		return input.nextInt();
+	}
+	
+	public static String LeerTexto(String msg) {
+		System.out.println(msg);
+		Scanner input = new Scanner(System.in);
+		return input.nextLine();
+	}
+
 }

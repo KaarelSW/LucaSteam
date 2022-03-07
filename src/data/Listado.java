@@ -107,6 +107,11 @@ public @Data class Listado implements IListado {
 				System.out.println(entrada.toString());
 			}
 		}
+
+	@Override
+	public void darDeAltaJuego(String[] atributos) {
+		Juego juegoEnAlta=crearJuego(atributos);
+		listaJuegos.put(listaJuegos.size()+1, juegoEnAlta);
 	}
 
 }

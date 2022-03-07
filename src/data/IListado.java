@@ -23,5 +23,6 @@ public interface IListado {
 	public boolean cargarCSV(String url);
 	public Juego crearJuego(String[] atributos);
 	public void filtrarJuegosPlataforma(String empresa);
+	public void darDeAltaJuego(String[] datos);
 
 }
