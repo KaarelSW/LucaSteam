@@ -31,6 +31,7 @@
 
 package control;
 
+import exceptions.LucaSteamExcepciones;
 import gui.Menu;
 import services.ILucaSteamService;
 import services.LucaSteamService;
@@ -44,7 +45,12 @@ public class LucaSteam {
 	public void abrirMenu() {
 		
 		boolean seguir = true;
-		servicios.cargarCSVServicios();
+		try {
+			servicios.cargarCSVServicios();
+		} catch (LucaSteamExcepciones e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		do {
 			new Menu().mostrarMenu();
 			seguir = this.selectorDeOpciones();	

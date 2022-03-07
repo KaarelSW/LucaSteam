@@ -22,13 +22,15 @@
 
 package services;
 
+import exceptions.LucaSteamExcepciones;
+
 public interface ILucaSteamService {
 	
 	public void mostrarDistribuidorasServicios();
 	public void filtrarPlataformaServicios(String empresa);
-	public void cargarCSVServicios();
+	public void cargarCSVServicios() throws LucaSteamExcepciones;
 	public void mostrarJuegosServicios();
-	public void darDeAltaJuegoServicios(String[] datos);
+	public void darDeAltaJuegoServicios(String[] datos) throws LucaSteamExcepciones;
 	public void filtrarGeneroServicios(String genero);
 	public void filtrarSigloXX();
 

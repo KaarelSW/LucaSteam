@@ -24,15 +24,17 @@ package data;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+
+import exceptions.LucaSteamExcepciones;
 import model.Juego;
 
 public interface IListado {
 	
 	public ArrayList<String> mostrarJuegos();
-	public boolean cargarCSV(String url);
-	public Juego crearJuego(String[] atributos);
+	public boolean cargarCSV(String url) throws LucaSteamExcepciones;
+	public Juego crearJuego(String[] atributos) throws LucaSteamExcepciones;
 	public ArrayList<String> filtrarJuegosPlataforma(String empresa);
-	public void darDeAltaJuego(String[] datos);
+	public void darDeAltaJuego(String[] datos) throws LucaSteamExcepciones;
 	public ArrayList<String> filtrarGenero(String genero);
 	public HashSet<String> mostrarDistribuidoras();
 	public ArrayList<String> filtrarSigloXX();

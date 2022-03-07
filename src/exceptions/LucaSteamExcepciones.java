@@ -33,10 +33,11 @@ public class LucaSteamExcepciones extends Exception {
 		switch (tipo) {
 		case 1:
 			level = Level.SEVERE;
-			
+			//csv vacío
 			break;
 		case 2:
 			level = Level.WARNING;
+			//año inferior a 1958
 			break;
 		case 3:
 			level = Level.INFO;
@@ -49,7 +50,7 @@ public class LucaSteamExcepciones extends Exception {
 
 	@Override
 	public String toString() {
-		Logger.getLogger(LucaSteamExcepciones.class.getName()).log(level, null, super.getMessage());
+		Logger.getLogger(LucaSteamExcepciones.class.getName()).log(level, "error", super.getMessage());
 		return super.getMessage();
 	}
 }

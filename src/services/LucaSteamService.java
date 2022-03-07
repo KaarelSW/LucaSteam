@@ -27,6 +27,7 @@ package services;
 
 import data.IListado;
 import data.Listado;
+import exceptions.LucaSteamExcepciones;
 import utils.Mostrador;
 
 public class LucaSteamService implements ILucaSteamService {
@@ -34,8 +35,8 @@ public class LucaSteamService implements ILucaSteamService {
 	private IListado listado = new Listado();
 	
 	@Override
-	public void cargarCSVServicios() {
-		listado.cargarCSV("vgsalesTab.csv");	
+	public void cargarCSVServicios() throws LucaSteamExcepciones {
+			listado.cargarCSV("vgsalesTab.csv");	
     }	
 
 	@Override
@@ -52,7 +53,7 @@ public class LucaSteamService implements ILucaSteamService {
 	}
 
 	@Override
-	public void darDeAltaJuegoServicios(String[] datos) {
+	public void darDeAltaJuegoServicios(String[] datos) throws LucaSteamExcepciones {
 		listado.darDeAltaJuego(datos);	
     }
 

@@ -29,6 +29,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+import exceptions.LucaSteamExcepciones;
 import lombok.Data;
 import model.Genero;
 import model.Juego;
@@ -61,7 +62,7 @@ public @Data class Listado implements IListado {
 		return juegosTotales;
 	}
 
-	public boolean cargarCSV(String url) {
+	public boolean cargarCSV(String url) throws LucaSteamExcepciones {
 		
 		listaJuegos = new HashMap<>();
 		int id = 0;
@@ -76,6 +77,9 @@ public @Data class Listado implements IListado {
 				id++;
 				line = lector.readLine();
 			}
+			if (listaJuegos.size()==0) {
+				throw new LucaSteamExcepciones("El csv está vacío",1);
+			}
 			return true;
 		} catch (IOException error) {
 			error.printStackTrace();
@@ -83,7 +87,7 @@ public @Data class Listado implements IListado {
 		return false;
 	}
 
-	public Juego crearJuego(String[] atributos) {
+	public Juego crearJuego(String[] atributos) throws LucaSteamExcepciones {
 		
 		String nombre = atributos[1];
 		Plataforma plataforma;
@@ -100,7 +104,9 @@ public @Data class Listado implements IListado {
 		if(atributos[3].equals("N/A")) {
 			fechaPublicacion = -1;
 		}else {
-			fechaPublicacion = Integer.parseInt(atributos[3]);
+			int fechaParseada = Integer.parseInt(atributos[3]);
+			if (fechaParseada < 1958) throw new LucaSteamExcepciones("Fecha incorrecta: año anterior a la fecha del primer videojuego",2);
+			else fechaPublicacion = fechaParseada;
 		}			
 		Genero genero;
 		if(atributos[4].equals("Role-Playing")) {
@@ -124,7 +130,7 @@ public @Data class Listado implements IListado {
 		return juegosFiltrados;
 	}
 
-	public void darDeAltaJuego(String[] atributos) {
+	public void darDeAltaJuego(String[] atributos) throws LucaSteamExcepciones {
 		
 		Juego juegoEnAlta=crearJuego(atributos);
 		listaJuegos.put(listaJuegos.size()+1, juegoEnAlta);
