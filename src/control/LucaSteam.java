@@ -7,9 +7,19 @@
  *Descripcion: Esta clase llama a la capa de servicios una vez se ha elegido una de las opciones que se
  *muestran en pantalla. De momento las opciones son mostrar la lista de juegos o salir.
  *
+ *Ahora las opciones incluyen dar de alta un juego para sumarlo a la lista. Y se cargan los datos al 
+ *abrir la aplicacion en lugar de al mostrar la lista de juegos.
+ *
  *Fecha: 04/03/22
  *
- *Version: 1
+ *Version: 2
+ *
+ *Ahora las opciones incluyen dar de alta un juego para sumarlo a la lista. Y se cargan los datos al 
+ *abrir la aplicacion en lugar de al mostrar la lista de juegos.
+ *
+ *Fecha: 07/03/22
+ *
+ *Version: 3
  *
  */
 

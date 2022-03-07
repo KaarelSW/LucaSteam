@@ -11,6 +11,12 @@
  *
  *Version: 1
  *
+ *Nuevo metodo darDeAltaJuegosServicios() 
+ *
+ *Fecha: 07/03/22
+ *
+ *Version: 2
+ *
  */
 
 package services;
