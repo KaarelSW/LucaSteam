@@ -85,6 +85,7 @@ public @Data class Listado implements IListado {
 
 		try (BufferedReader lector = new BufferedReader(new FileReader(url))) {
 			String line = lector.readLine();
+			
 			while (line != null) {
 				if (id != 0) {
 					String[] atributos = line.split("	");
@@ -163,6 +164,7 @@ public @Data class Listado implements IListado {
 	public ArrayList<String> filtrarJuegosPlataforma(String empresa) {
 
 		ArrayList<String> juegosFiltrados = new ArrayList<String>();
+		
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
 
 			if (entrada.getValue().getPlataforma().getEmpresa() == empresa) {
