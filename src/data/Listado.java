@@ -36,6 +36,24 @@
  *
  *Version: 4
  *
+ *En esta versión se incluyen varios métodos. EL primero es "filtrarSigloXX" que muestra todos los juegos 
+ *lanzados en el siglo XX que se encuentren en la lista. El segundo es "filtrarPorFechaPar" que es similar
+ *al anterior, pero muestra los juegos lanzados en años pares. Por último, tenemos "filtrarJuegosPlataforma"
+ *que recibe como argumento un String el cual debe ser una de las plataformas registradas en el enumerado
+ *para así devolver los juegos registrados que se lanzaron para la plataforma indicada.
+ * 
+ *Fecha: 07/03/22
+ *
+ *Version: 5
+ *
+ *Se ha añadido un metodo que, a partir de un String, te devuelve la clave de un juego que contenga ese texto 
+ *y si son varios, te haga elegir uno de ellos. Este metodo es llamado por dos implementados en esta version:
+ * - un metodo que dada la clave de un juego en la lista, te pide nuevos datos y los reemplaza
+ * - un método que dada la clave de un juego en la lista, lo elimina
+ *
+ *Fecha: 08/03/22
+ *
+ *Version: 6
  *
  */
 

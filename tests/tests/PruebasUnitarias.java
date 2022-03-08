@@ -1,3 +1,4 @@
+package tests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
@@ -14,7 +15,7 @@ import model.Genero;
 import model.Juego;
 import model.Plataforma;
 
-class Tests2 {
+class PruebasUnitarias {
 	
 	Listado listado = new Listado();
 	Juego juego = new Juego("", null, 2003, Genero.SHOOTER, "Holi");
