@@ -5,7 +5,7 @@
  *Nombre: Juego
  *
  *Descripcion: Creamos los enumerados correspondientes a la clase plataforma
- *y se les asocia un atributo String
+ *y se les asocia una cosntante String que indica la empresa que desarrolló tal plataforma.
  *
  *Fecha: 04/03/22
  *
