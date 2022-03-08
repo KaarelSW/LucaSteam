@@ -39,5 +39,7 @@ public interface IListado {
 	public HashSet<String> mostrarDistribuidoras();
 	public ArrayList<String> filtrarSigloXX();
 	public ArrayList<String> filtrarPorFechaPar();
-
+	public int buscarJuego(String nombre) throws LucaSteamExcepciones;
+	public String eliminarJuego(String nombre) throws LucaSteamExcepciones;
+	//public void modJuego(String nombre);
 }
