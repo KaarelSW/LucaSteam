@@ -38,5 +38,6 @@ public interface IListado {
 	public ArrayList<String> filtrarGenero(String genero);
 	public HashSet<String> mostrarDistribuidoras();
 	public ArrayList<String> filtrarSigloXX();
+	public ArrayList<String> filtrarPorFechaPar();
 
 }
