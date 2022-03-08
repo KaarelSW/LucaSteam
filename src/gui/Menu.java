@@ -24,10 +24,12 @@ package gui;
 public class Menu {
 
 	public void mostrarMenu(){
+		
 		System.out.println("");
 		System.out.println(" Pantalla de opciones ");
 		System.out.println("");
 		System.out.println("***************************");
+		System.out.println("");
 		System.out.println("Seleccione una opción: ");
 		System.out.println("	1. Listar juegos ");
 		System.out.println("	2. Filtrar los juegos de Nintendo ");
@@ -39,7 +41,9 @@ public class Menu {
 		System.out.println("	8. Modificar juego ");
 		System.out.println("	9. Filtrar juegos lanzados en año par");		
 		System.out.println("	0. Salir ");	
+		System.out.println("");
 		System.out.println("***************************");
+		System.out.println("");
 		System.out.println(">> ");	
 	}
 	

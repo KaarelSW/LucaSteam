@@ -35,6 +35,7 @@ public class LucaSteamExcepciones extends Exception {
 			level = Level.SEVERE;
 			//csv vacío
 			break;
+			
 		case 2:
 			level = Level.WARNING;
 			//año inferior a 1958
@@ -43,10 +44,12 @@ public class LucaSteamExcepciones extends Exception {
 			//plataforma inválida
 			//Búsqueda sin resultados
 			break;
+			
 		case 3:
 			level = Level.INFO;
 			//busqueda en vacio
 			break;
+			
 		default:
 			level = Level.INFO;
 			break;
