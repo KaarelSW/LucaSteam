@@ -35,6 +35,7 @@ public class Menu {
 		System.out.println("	4. Filtrar los juegos de plataformas");
 		System.out.println("	5. Listar distribuidoras ");
 		System.out.println("	6. Filtrar siglo XX ");
+		System.out.println("	7. Eliminar juego ");
 		System.out.println("	0. Salir ");	
 		System.out.println("***************************");
 		System.out.println(">> ");	

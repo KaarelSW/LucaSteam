@@ -28,18 +28,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import exceptions.LucaSteamExcepciones;
 import lombok.Data;
 import model.Genero;
 import model.Juego;
 import model.Plataforma;
+import utils.LeerDatos;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public @Data class Listado implements IListado {
 
@@ -173,11 +174,12 @@ public @Data class Listado implements IListado {
 		HashSet<String> distribuidoras = new HashSet<String>();
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
 				distribuidoras.add(entrada.getValue().getDistribuidora());
-			}
+		}
 		return distribuidoras;
 	}
 	
 	public ArrayList<String> filtrarSigloXX(){
+		
 		ArrayList<String> juegosFiltrados = new ArrayList<String>();
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
 			if ((entrada.getValue().getFechaPublicacion()>=1901)&&(entrada.getValue().getFechaPublicacion()<=2000)) {
@@ -187,5 +189,46 @@ public @Data class Listado implements IListado {
 		return juegosFiltrados;
 	}
 	
+	public String eliminarJuego(String nombre) throws LucaSteamExcepciones {
+		
+		try {
+			int codigoJuegoAEliminar = buscarJuego(nombre);
+			String juegoEliminado = listaJuegos.get(codigoJuegoAEliminar).getNombre();
+			listaJuegos.remove(codigoJuegoAEliminar);
+			return juegoEliminado;
+		} catch (LucaSteamExcepciones e) {
+			e.printStackTrace();			
+		}
+		return "";
+	}
+	/*
+	public void buscarJuego(String nombre) {
+	
+		Map<Integer, String> resultadoBusqueda = new HashMap<Integer,String>();
+		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
+			if(entrada.getValue().getNombre().contains(nombre)) {
+				resultadoBusqueda.put(entrada.getKey(), entrada.getValue().getNombre());
+			}
+		}
+	}*/
+	
+	public int buscarJuego(String nombre) throws LucaSteamExcepciones {
+		Map<Integer, String> resultadoBusqueda = listaJuegos.entrySet().stream()
+				.filter(x -> x.getValue().getNombre().toUpperCase().contains(nombre.toUpperCase()))
+				.collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue().getNombre()));
+		if(resultadoBusqueda.size() == 0) {
+			throw new LucaSteamExcepciones("Búsqueda sin resultados", 2);
+		}else if(resultadoBusqueda.size() == 1) {
+			return resultadoBusqueda.entrySet().iterator().next().getKey();
+		}else {
+			resultadoBusqueda.entrySet().stream().forEach(x -> System.out.println("Código: "+ x.getKey()+ " = "+x.getValue()));
+			System.out.println("");
+			int resultado;
+			do
+				resultado = LeerDatos.LeerInt("Introduzca el código del juego seleccionado: ");	
+			while(!resultadoBusqueda.containsKey(resultado)); 
+			return resultado;		
+		}	
+	}
 
 }

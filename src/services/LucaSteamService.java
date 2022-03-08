@@ -71,6 +71,16 @@ public class LucaSteamService implements ILucaSteamService {
 	public void filtrarSigloXX() {
 		Mostrador.mostrarInforme(listado.filtrarSigloXX());
 	}
+
+	@Override
+	public void eliminarJuegoServicios(String nombre) throws LucaSteamExcepciones {
+		System.out.println("Juego elimindado: " + listado.eliminarJuego(nombre));
+	}
+
+	@Override
+	public void modJuegoServicios(String nombre) throws LucaSteamExcepciones {
+		//listado.modJuego(nombre);
+	}
 	
 
 }
