@@ -81,7 +81,10 @@ public class LucaSteam {
 				servicios.mostrarDistribuidorasServicios();
 				break;
 			case 6: 
-				servicios.filtrarSigloXX();
+				servicios.filtrarSigloXXServicios();
+				break;
+			case 7: 
+				servicios.eliminarJuegoServicios();
 				break;
 			case 0:
 				// Salir
