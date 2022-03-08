@@ -41,6 +41,7 @@ public class LucaSteamExcepciones extends Exception {
 			//campo vacío
 			//género inválido
 			//plataforma inválida
+			//Búsqueda sin resultados
 			break;
 		case 3:
 			level = Level.INFO;
@@ -54,7 +55,7 @@ public class LucaSteamExcepciones extends Exception {
 
 	@Override
 	public String toString() {
-		Logger.getLogger(LucaSteamExcepciones.class.getName()).log(level, "error", super.getMessage());
+		Logger.getLogger(LucaSteamExcepciones.class.getName()).log(level, "", super.getMessage());
 		return super.getMessage();
 	}
 }

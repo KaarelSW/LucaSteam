@@ -74,12 +74,15 @@ public class LucaSteamService implements ILucaSteamService {
 
 	@Override
 	public void eliminarJuegoServicios(String nombre) throws LucaSteamExcepciones {
-		System.out.println("Juego elimindado: " + listado.eliminarJuego(nombre));
+		String juegoEliminado = listado.eliminarJuego(nombre);
+		if (juegoEliminado.length() != 0) {
+			System.out.println("Juego elimindado: " + juegoEliminado);
+		}
 	}
 
 	@Override
 	public void modJuegoServicios(String nombre) throws LucaSteamExcepciones {
-		//listado.modJuego(nombre);
+		System.out.println("Datos del juego modificado: " + listado.modJuego(nombre));
 	}
 	
 	public void filtrarPorParServicios() {
