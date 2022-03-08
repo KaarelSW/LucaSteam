@@ -71,7 +71,7 @@ public class LucaSteam {
 				servicios.filtrarPlataformaServicios("Nintendo");
 				break;
 			case 3: 
-				String[] array = solicitarDatos();
+				String[] array = LeerDatos.solicitarDatos();
 				servicios.darDeAltaJuegoServicios(array);
 				break;
 			case 4:
@@ -84,8 +84,11 @@ public class LucaSteam {
 				servicios.filtrarSigloXXServicios();
 				break;
 			case 7: 				
-				servicios.eliminarJuegoServicios(solicitarNombre());
+				servicios.eliminarJuegoServicios(LeerDatos.solicitarNombre());
 				break;
+			case 8: 				
+				servicios.modJuegoServicios(LeerDatos.solicitarNombre());
+				break;	
 			case 9: 
 				servicios.filtrarPorParServicios();
 				break;
@@ -94,25 +97,9 @@ public class LucaSteam {
 				seguir = false;
 			}
 		} catch ( Exception e ) {
-			System.out.println("Error " + e.toString());
+			System.out.println("Tipo de error " + e.toString());
 		}		
 		return seguir;		
 	}	
 	
-	public String[] solicitarDatos() {
-		
-		String atributos[] = new String[6];
-		
-		atributos[1] = LeerDatos.LeerTexto("Introduzca el nombre del juego");
-		atributos[2] = LeerDatos.LeerTexto("Introduzca su plataforma");
-		atributos[3] = LeerDatos.LeerTexto("Introduzca el año de salida de " + atributos[1]);
-		atributos[4] = LeerDatos.LeerTexto("A que género pertenece?");
-		atributos[5] = LeerDatos.LeerTexto("Por último, indique la distribuidora");
-		
-		return atributos;
-	}
-	
-	public String solicitarNombre() {
-		return LeerDatos.LeerTexto("Introduzca el nombre del juego");
-	}
 }

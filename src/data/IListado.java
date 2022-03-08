@@ -41,5 +41,5 @@ public interface IListado {
 	public ArrayList<String> filtrarPorFechaPar();
 	public int buscarJuego(String nombre) throws LucaSteamExcepciones;
 	public String eliminarJuego(String nombre) throws LucaSteamExcepciones;
-	//public void modJuego(String nombre);
+	public String modJuego(String nombre) throws LucaSteamExcepciones;
 }

@@ -34,5 +34,22 @@ public class LeerDatos {
 		Scanner input = new Scanner(System.in);
 		return input.nextLine();
 	}
+	
+	public static String[] solicitarDatos() {
+		
+		String atributos[] = new String[6];
+		
+		atributos[1] = LeerTexto("Introduzca el nombre del juego");
+		atributos[2] = LeerTexto("Introduzca su plataforma");
+		atributos[3] = LeerTexto("Introduzca el año de salida de " + atributos[1]);
+		atributos[4] = LeerTexto("A que género pertenece?");
+		atributos[5] = LeerTexto("Por último, indique la distribuidora");
+		
+		return atributos;
+	}
+
+	public static String solicitarNombre() {
+		return LeerTexto("Introduzca el nombre del juego");
+	}
 
 }

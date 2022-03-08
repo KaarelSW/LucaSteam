@@ -190,6 +190,7 @@ public @Data class Listado implements IListado {
 	}
 
 	public ArrayList<String> filtrarPorFechaPar(){
+		
 		ArrayList<String> juegosFiltrados = new ArrayList<String>();
 		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
 			if (entrada.getValue().getFechaPublicacion() % 2 == 0) {
@@ -207,22 +208,34 @@ public @Data class Listado implements IListado {
 			listaJuegos.remove(codigoJuegoAEliminar);
 			return juegoEliminado;
 		} catch (LucaSteamExcepciones e) {
-			e.printStackTrace();			
+			System.out.println("Tipo de error " + e.toString());
+			return "";
 		}
-		return "";
+		
 	}
-	/*
-	public void buscarJuego(String nombre) {
 	
-		Map<Integer, String> resultadoBusqueda = new HashMap<Integer,String>();
-		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
-			if(entrada.getValue().getNombre().contains(nombre)) {
-				resultadoBusqueda.put(entrada.getKey(), entrada.getValue().getNombre());
+	public String modJuego (String nombre) throws LucaSteamExcepciones {
+		
+		int codigoJuegoAMod = buscarJuego(nombre);
+		System.out.println("Juego a modificar: " + listaJuegos.get(codigoJuegoAMod).getNombre());
+		Juego mod = listaJuegos.get(codigoJuegoAMod);
+		boolean guardado = false;
+		while (!guardado) {
+			try {
+				String[] nuevosDatos = LeerDatos.solicitarDatos();
+				Juego nuevo = crearJuego(nuevosDatos);
+				mod = nuevo;
+				guardado = true;
+			} catch (LucaSteamExcepciones e) {
+				System.out.println("Tipo de error: " + e.toString());
 			}
 		}
-	}*/
+		listaJuegos.put(codigoJuegoAMod, mod);
+		return mod.toString();
+	}
 	
 	public int buscarJuego(String nombre) throws LucaSteamExcepciones {
+		
 		Map<Integer, String> resultadoBusqueda = listaJuegos.entrySet().stream()
 				.filter(x -> x.getValue().getNombre().toUpperCase().contains(nombre.toUpperCase()))
 				.collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue().getNombre()));
