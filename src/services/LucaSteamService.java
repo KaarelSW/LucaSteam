@@ -8,16 +8,17 @@
  *metodos cargarCSV(String url) y mostrarJuegos() para leer el archivo CSV, guardar los Juegos en la lista
  *y mostrarlos por pantalla.
  *
- *Fecha: 06/03/22
+ *Fecha: 04/03/22
  *
+ *Añadido el metodo filtrarPlataformaServicios
+ *
+ *Fecha: 06/03/22
  *Version: 2
- *Version 2.1 Añadido el metodo filtrarPlataformaServicios
  *
  *Ahora cargarCSV se llama de forma separada y tambien se ha creado el metodo darAltaJuegosServicios para 
  *llamar tanto a solicitarDatos() como a darDeAltaJuego(datos) de listado.
  *
  *Fecha: 07/03/22
- *
  *Version: 3
  *
  *

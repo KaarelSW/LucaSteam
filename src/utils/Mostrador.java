@@ -1,3 +1,17 @@
+/**
+*
+* @author Grupo02
+*
+*Nombre: Mostrador
+*
+*Descripcion: Esta clase se usa para generar informes a partir de un ArrayList o de
+*un HashSet para mostrarlos por consola.
+*
+*Fecha: 08/03/22
+*Version 1
+*
+*/
+
 package utils;
 import java.util.ArrayList;
 import java.util.HashSet;

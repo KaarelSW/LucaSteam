@@ -1,7 +1,21 @@
+/**
+ * @author Grupo02
+ * 
+ * Nombre: LucaSteamExcepciones
+ * 
+ * Descripcion: esta clase sirve para instanciar nuevas excepciones lanzadas desde el programa y 
+ * que recojan errores definidos especificamente. Los tipos de excepciones se recogen en el metodo
+ * setLevel que categorizan a los errores por la escala de amenaza que constituyen para el 
+ * correcto funcionamiento del programa.
+ * 
+ * Fecha: 08/03/22
+ * Version 1
+ *
+ */
+
 package exceptions;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 
 
 public class LucaSteamExcepciones extends Exception {

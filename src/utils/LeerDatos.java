@@ -7,9 +7,13 @@
  *Descripcion: Clase utilizada para la lectura de datos introducidos por teclado llamando a la clase Scanner
  *
  *Fecha: 04/03/22
- *
  *Version: 1
  *
+ *Añadidos en esta clase dos metodos para solicitar datos sobre juegos, uno recoge los datos de cada atributo de Juego
+ *para devolverla por Array de Strings y otra solicita un nombre para buscar en la lista de juegos.
+ *
+ *Fecha: 08/03/22
+ *Version: 2
  */
 
 package utils;
