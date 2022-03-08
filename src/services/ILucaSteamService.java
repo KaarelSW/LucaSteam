@@ -18,6 +18,14 @@
  *
  *Version: 2
  *
+ * Nuevo metodo filtrarGeneroServicios(String genero)
+ * Nuevo metodo filtrarSigloXXServicios();
+ * 
+ * *Version: 2
+ * 
+ * Nuevo metodo filtrarPorParServicios ();
+ * Nuevo metodo eliminarJuegoServicios(String nombre)
+ * Nuevo metodo modJuegoServicios(String nombre) throws LucaSteamExcepciones;
  */
 
 package services;
