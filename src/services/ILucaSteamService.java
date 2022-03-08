@@ -32,7 +32,9 @@ public interface ILucaSteamService {
 	public void mostrarJuegosServicios();
 	public void darDeAltaJuegoServicios(String[] datos) throws LucaSteamExcepciones;
 	public void filtrarGeneroServicios(String genero);
-	public void filtrarSigloXX();
 	public void filtrarPorParServicios ();
+	public void filtrarSigloXXServicios();
+	public void eliminarJuegoServicios(String nombre);
+
 
 }
