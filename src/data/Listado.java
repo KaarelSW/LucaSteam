@@ -30,6 +30,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import control.Main;
 import exceptions.LucaSteamExcepciones;
 import lombok.Data;
 import model.Genero;
@@ -114,7 +115,9 @@ public @Data class Listado implements IListado {
 		}else {
 			int fechaParseada = Integer.parseInt(atributos[3]);
 			if (fechaParseada < 1958) throw new LucaSteamExcepciones("Fecha incorrecta: año anterior a la fecha del primer videojuego", 2);
-			else fechaPublicacion = fechaParseada;
+			int fechaActual = LocalDate.now().getYear();
+			if(fechaParseada > fechaActual) System.out.println("\n INFO: Early Access, este juego no ha salido aún.");
+			fechaPublicacion = fechaParseada;
 		}			
 		Genero genero;
 		if(atributos[4].equals("Role-Playing")) {
@@ -146,12 +149,8 @@ public @Data class Listado implements IListado {
 		
 		Juego juegoEnAlta=crearJuego(atributos);
 		listaJuegos.put(listaJuegos.size()+1, juegoEnAlta);
-		int fecha = LocalDate.now().getYear();
-		if(Integer.parseInt(atributos[3]) > fecha) throw new LucaSteamExcepciones("Early Access: Este juego no ha salido aún.", 3);
+		
 	}
-	
-
-	//Creamos un metodo para filtrar por el genero plataforma
 
 	public ArrayList<String> filtrarGenero(String genero){
 		
@@ -244,12 +243,13 @@ public @Data class Listado implements IListado {
 		}else if(resultadoBusqueda.size() == 1) {
 			return resultadoBusqueda.entrySet().iterator().next().getKey();
 		}else {
+			if (nombre.length() == 0) throw new LucaSteamExcepciones("No se ha filtrado la búsqueda (input vacío)",3);
 			resultadoBusqueda.entrySet().stream().forEach(x -> System.out.println("Código: "+ x.getKey()+ " = "+x.getValue()));
 			System.out.println("");
 			int resultado;
-			do
-				resultado = LeerDatos.LeerInt("Introduzca el código del juego seleccionado: ");	
-			while(!resultadoBusqueda.containsKey(resultado)); 
+			do {
+				resultado = LeerDatos.LeerInt("Introduzca el código del juego seleccionado: ");
+			}while(!resultadoBusqueda.containsKey(resultado)); 
 			return resultado;		
 		}
 	}

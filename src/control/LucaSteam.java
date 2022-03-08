@@ -48,8 +48,7 @@ public class LucaSteam {
 		try {
 			servicios.cargarCSVServicios();
 		} catch (LucaSteamExcepciones e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Tipo de error " + e.toString());
 		}
 		do {
 			new Menu().mostrarMenu();
@@ -92,7 +91,7 @@ public class LucaSteam {
 			case 9: 
 				servicios.filtrarPorParServicios();
 				break;
-						case 0:
+			case 0:
 				// Salir
 				seguir = false;
 			}
