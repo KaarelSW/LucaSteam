@@ -14,6 +14,7 @@
  */package model;
 
 public enum Plataforma {
+	
 	WII("Nintendo"),
 	NES("Nintendo"),
 	SNES("Nintendo"),
