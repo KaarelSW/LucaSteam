@@ -19,7 +19,26 @@
  *llamar tanto a solicitarDatos() como a darDeAltaJuego(datos) de listado.
  *
  *Fecha: 07/03/22
- *Version: 3
+ *Version: 3 
+ *
+ *  Se añaden los siguientes metodos:
+ *  - mostrarDistribuidorasServicios(), que es llamado por la clase LucaSteam y llama
+ *    a Mostrador.mostrarInforme. 
+ *    
+ *  - filtrarGeneroServicios(), que es llamado por la clase LucaSteam y llama
+ *    a Mostrador.mostrarInforme. 
+ *    
+ *  - filtrarSigloXXServicios(), que es llamado por la clase LucaSteam y llama
+ *    a Mostrador.mostrarInforme. 
+ *    
+ *  - eliminarJuegoServicios(), que es llamado por la clase LucaSteam y llama
+ *    a Listado.eliminarJuego()
+ *    
+ *  - modJuegoServicios, que es llamado por la clase LucaSteam y llama
+ *    a Listado.modJuego()
+ *    
+ *  - public void filtrarPorParServicios(), que es llamado por la clase LucaSteam y llama
+ *    a Listado.filtrarPorPar()
  *
  *
  */
@@ -44,8 +63,6 @@ public class LucaSteamService implements ILucaSteamService {
 	public void mostrarJuegosServicios() {
 		Mostrador.mostrarInforme(listado.mostrarJuegos());		
     }	
-	
-	// En este metodo hacemos la llamado a la capa de Datos
 	
 	@Override
 	public void filtrarPlataformaServicios(String empresa) {
@@ -86,6 +103,7 @@ public class LucaSteamService implements ILucaSteamService {
 		System.out.println("Datos del juego modificado: " + listado.modJuego(nombre));
 	}
 	
+	@Override
 	public void filtrarPorParServicios() {
 		Mostrador.mostrarInforme(listado.filtrarPorFechaPar());
 	}
