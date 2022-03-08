@@ -45,7 +45,7 @@ public class LucaSteamExcepciones extends Exception {
 			break;
 		case 3:
 			level = Level.INFO;
-			//año superior al actual
+			//busqueda en vacio
 			break;
 		default:
 			level = Level.INFO;
