@@ -186,6 +186,16 @@ public @Data class Listado implements IListado {
 		}
 		return juegosFiltrados;
 	}
+
 	
+	public ArrayList<String> filtrarPorFechaPar(){
+		ArrayList<String> juegosFiltrados = new ArrayList<String>();
+		for (Map.Entry<Integer, Juego> entrada : listaJuegos.entrySet()) {
+			if (entrada.getValue().getFechaPublicacion() % 2 == 0) {
+				juegosFiltrados.add(entrada.toString());
+			}
+		}
+		return juegosFiltrados;
+	}
 
 }
