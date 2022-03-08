@@ -81,12 +81,15 @@ public class LucaSteam {
 				servicios.mostrarDistribuidorasServicios();
 				break;
 			case 6: 
-				servicios.filtrarSigloXX();
+				servicios.filtrarSigloXXServicios();
+				break;
+			case 7: 				
+				servicios.eliminarJuegoServicios(solicitarNombre());
 				break;
 			case 9: 
 				servicios.filtrarPorParServicios();
 				break;
-			case 0:
+						case 0:
 				// Salir
 				seguir = false;
 			}
@@ -109,4 +112,7 @@ public class LucaSteam {
 		return atributos;
 	}
 	
+	public String solicitarNombre() {
+		return LeerDatos.LeerTexto("Introduzca el nombre del juego");
+	}
 }

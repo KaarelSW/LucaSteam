@@ -34,5 +34,7 @@ public interface ILucaSteamService {
 	public void filtrarGeneroServicios(String genero);
 	public void filtrarSigloXXServicios();
 	public void filtrarPorParServicios ();
+	public void eliminarJuegoServicios(String nombre) throws LucaSteamExcepciones;
+	public void modJuegoServicios(String nombre) throws LucaSteamExcepciones;
 
 }
