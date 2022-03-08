@@ -11,11 +11,24 @@
  *
  *Version: 1
  *
- *Añadido el metodo mostrarDistribuidoras()
+ *Se ha incluido el metodo para dar de alta un juego para sumarlo a la lista (public void darDeAltaJuego(String[] datos))
+ *
+ *Fecha: 06/03/22
+ *
+ *Version: 2
+ *
+ *Añadidos los metodos mostrarDistribuidoras(), filtrarSigloXX(), filtrarPorFechaPar().
  *
  *Fecha: 07/03/22
  *
- *Version: 2
+ *Version: 3
+ *
+ *Se han incluido los los metodos para modificar un juego y para eliminar un juego, asi como un metodo para
+ *buscar juegos.
+ *
+ *Fecha: 08/03/22
+ *
+ *Version: 4
  *
  *
  */

@@ -8,17 +8,34 @@
  *crear los Juegos que iran a la listaJuegos a partir de los datos de dicho archivo y el metodo para 
  *mostrar la listaJuegos en pantalla.
  *
+ *Fecha: 04/03/22
+ *
+ *Version: 1
+ *
+ *Incluido un metodo para dar de alta un juego, al que se le introducen los atributos que tendra el juego
+ *pidiendolos como input del usuario. El metodo mostrar juegos ahora guarda la lista de juegos y se 
+ *muestran usando la clase Mostrador del paquete utils, a la que se llama desde el paquete de servicios.
+ *
  *Fecha: 06/03/22
  *
  *Version: 2
- *Version 2.1 
  *
- *Nuevo metodo para mostrar las distribuidoras de los juegos en la lista. Devuelve un array con las distribuidoras 
- *y las muestra por pantalla.
+ *Nuevo metodo para mostrar las distribuidoras de los juegos en la lista. Devuelve un HashSet con las 
+ *distribuidoras.
  *
  *Fecha: 07/03/22
  *
  *Version: 3
+ *
+ *Se han añadido el metodo darDeAltaJuego al que se le pasan los datos desde la capa de servicios, recogidos
+ *de la capa de control y mete el juego creado con dichos datos en la lista de juegos.
+ *Tambien se ha añadido el metodo para filtrar la lista de juegos y mostrar solo aquellos que sean del
+ *genero indicado. En este caso el genero indicado viene de la capa de servicios y sera siempre plataformas.
+ * 
+ *Fecha: 07/03/22
+ *
+ *Version: 4
+ *
  *
  */
 
@@ -30,7 +47,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import control.Main;
 import exceptions.LucaSteamExcepciones;
 import lombok.Data;
 import model.Genero;
@@ -45,9 +61,6 @@ import java.time.LocalDate;
 
 public @Data class Listado implements IListado {
 
-	// Declaramos un Mapa para almacenar
-	// la lista de juegos
-
 	private Map<Integer, Juego> listaJuegos;
 
 	public Listado() {
@@ -55,9 +68,7 @@ public @Data class Listado implements IListado {
 		listaJuegos = new HashMap<>();
 	}
 
-	// Creamos un metodo para recorrer el el mapa
-
-	public ArrayList<String> mostrarJuegos() {
+	public ArrayList<String> mostrarJuegos(){
 
 		ArrayList<String> juegosTotales = new ArrayList<String>();
 
