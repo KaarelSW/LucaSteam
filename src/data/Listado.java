@@ -197,6 +197,7 @@ public @Data class Listado implements IListado {
 			}
 		}
 		return juegosFiltrados;
+	}
 
 	public String eliminarJuego(String nombre) throws LucaSteamExcepciones {
 		
